@@ -57,7 +57,8 @@ navigator.share = navigator.share || (function(){
 	const idiom = idioms[navigator.language.substr(0, 2).toLowerCase()] || idioms.en;
 
 	let android = navigator.userAgent.match(/Android/i);
-    let ios = navigator.userAgent.match(/iPhone|iPad|iPod|Macintosh/i);
+    let ios = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    // let ios = navigator.userAgent.match(/iPhone|iPad|iPod|Macintosh/i);
 	let isDesktop = !(ios || android); // on those two support "mobile deep links", so HTTP based fallback for all others.
 
 	// sms on ios 'sms:;body='+payload, on Android 'sms:?body='+payload
@@ -367,7 +368,9 @@ navigator.share = navigator.share || (function(){
 								window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
 								break;
 							}
-							case '': {
+							case 'whatsapp': {
+								payload = title + ': ' + url;
+								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
 							case '': {
