@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo for the web sharing api polyfill</title>
+
+    <style>
+        body {
+            background-color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Share it" onclick="shareTheLink()" />
+
+    <script src="/dist/share.js"></script>
+    <script>
+        function shareTheLink () {
+            navigator.share({
+                title: 'Web Share API Polyfill',
+                text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+                url: location.href
+            })
+            .then( _ => console.log('Yay, you shared it :)'))
+            .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
+        }
+    </script>
+</body>
+</html>
