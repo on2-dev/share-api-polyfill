@@ -89,6 +89,12 @@ navigator.share = navigator.share || (function(){
 
 		return new Promise((resolve, reject) => {
 			appendCSS(`
+				@media only screen and (max-width: 380px) {
+					.tool-icon {
+						margin: 0 8px !important;
+					}
+				}
+
 				#shareAPIPolyfill-backdrop,
 				#shareAPIPolyfill-container {
 					opacity: 0;
@@ -130,7 +136,6 @@ navigator.share = navigator.share || (function(){
 				}
 				#shareAPIPolyfill-container .shareAPIPolyfill-header .shareAPIPolyfill-icons-container {
 					display: flex;
-					justify-content: space-between;
 				}
 
 				#shareAPIPolyfill-container .shareAPIPolyfill-header-title {
