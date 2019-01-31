@@ -6,6 +6,8 @@ It also supports multilanguage (so far, available in english, spanish and portug
 
 This is a very simple, single file import polyfill.
 
+![JavaScript Share API Polyfill in a Browser](javascript-share-api-browser-polyfill.gif)
+
 ## Insalling it:
 
 Just import it like so:
