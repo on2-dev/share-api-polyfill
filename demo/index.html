@@ -21,7 +21,8 @@
             navigator.share({
                 title: 'Web Share API Polyfill',
                 text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
-                url: location.href
+                url: location.href,
+                fbId: '136223956547034'
             })
             .then( _ => console.log('Yay, you shared it :)'))
             .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
