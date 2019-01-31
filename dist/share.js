@@ -379,7 +379,8 @@ navigator.share = navigator.share || (function(){
 								window.open(`http://twitter.com/share?text=${title}&url=${url}&hashtags=${hashtags || ''}`);
 								break;
 							}
-							case '': {
+							case 'linkedin': {
+								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${title}&source=LinkedIn`);
 								break;
 							}
 							case 'telegram': {
