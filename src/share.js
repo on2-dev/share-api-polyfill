@@ -371,12 +371,22 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'whatsapp': {
-								payload = title + ': ' + url;
+								const payload = title + ': ' + url;
 								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
 							case 'twitter': {
 								window.open(`http://twitter.com/share?text=${title}&url=${url}&hashtags=${hashtags || ''}`);
+								break;
+							}
+							case '': {
+								break;
+							}
+							case 'telegram': {
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + title: 'tg://msg?text=' + title + ': ' + payload));
+								break;
+							}
+							case '': {
 								break;
 							}
 							case '': {
