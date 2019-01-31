@@ -299,7 +299,7 @@ navigator.share = navigator.share || (function(){
 						<div class="the-icon"></div>
 						<div class="the-icon-title">${idiom.telegram}</div>
 					</div>
-					<div class="tool-icon skype" data-tool="skype">
+					<div class="tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
 						<div class="the-icon"></div>
 						<div class="the-icon-title">${idiom.skype}</div>
 					</div>
@@ -329,7 +329,27 @@ navigator.share = navigator.share || (function(){
 				container.classList.add('visible');
 
 				bindEvents();
+				addSkypeSupport();
 			}, 300);
+
+			function addSkypeSupport () {
+				(function(r, d, s) {
+					r.loadSkypeWebSdkAsync = r.loadSkypeWebSdkAsync || function(p) {
+						var js, sjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(p.id)) { return; }
+						js = d.createElement(s);
+						js.id = p.id;
+						js.src = p.scriptToLoad;
+						js.onload = p.callback
+						sjs.parentNode.insertBefore(js, sjs);
+					};
+					var p = {
+						scriptToLoad: 'https://swx.cdn.skype.com/shared/v/latest/skypewebsdk.js',
+						id: 'skype_web_sdk'
+					};
+					r.loadSkypeWebSdkAsync(p);
+				})(window, document, 'script');
+			}
 
 			function bindEvents () {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
