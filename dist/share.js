@@ -94,7 +94,7 @@ navigator.share = navigator.share || (function(){
 	}
 
 	return function ShareAPIPolyfill (data = {}) {
-		const { title, text, url, fbId } = data;
+		const { title, text, url, fbId, hashtags } = data;
 
 		return new Promise((resolve, reject) => {
 			appendCSS(`
@@ -273,10 +273,12 @@ navigator.share = navigator.share || (function(){
 			</div>
 			<div class="shareAPIPolyfill-body">
 				<div class="shareAPIPolyfill-icons-container">
-					<div class="tool-icon messenger" data-tool="messenger">
-						<div class="the-icon"></div>
-						<div class="the-icon-title">${idiom.messenger}</div>
-					</div>
+					${(fbId ? `
+						<div class="tool-icon messenger" data-tool="messenger">
+							<div class="the-icon"></div>
+							<div class="the-icon-title">${idiom.messenger}</div>
+						</div>
+					` : '')}
 					<div class="tool-icon facebook" data-tool="facebook">
 						<div class="the-icon"></div>
 						<div class="the-icon-title">${idiom.facebook}</div>
@@ -373,7 +375,8 @@ navigator.share = navigator.share || (function(){
 								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
-							case '': {
+							case 'twitter': {
+								window.open(`http://twitter.com/share?text=${title}&url=${url}&hashtags=${hashtags || ''}`);
 								break;
 							}
 							case '': {
