@@ -1,6 +1,6 @@
 # Share API Polyfill
 
-This is a polyfill for the `Sharing API` that can be used in desktop too, so your users can shere in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
+This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
 
 It also supports multilanguage (so far, available in english, spanish and portuguese, and you can help us with that :) ).
 
@@ -8,7 +8,7 @@ This is a very simple, single file import polyfill.
 
 ![JavaScript Share API Polyfill in a Browser](https://github.com/NascHQ/share-api-polyfill/blob/master/demo/javascript-share-api-browser-polyfill.gif?raw=true)
 
-## Insalling it:
+## Installing it:
 
 Just import it like so:
 
@@ -36,7 +36,7 @@ navigator.share({
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 ```
 
-But in this case, you can also pass your `Facebook App Id` to enable sharing with **messenger**.  
+But in this case, you can also pass your `Facebook App Id` to enable sharing with **messenger**.
 Also, you can pass in a list of hashtags to be used when sharing with twitter.
 
 ```js
