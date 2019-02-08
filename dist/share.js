@@ -11,7 +11,7 @@ navigator.share = navigator.share || (function(){
 	
 	const idioms = {
 		pt: {
-			shareTitle: 'Comparilhar',
+			shareTitle: 'Compartilhar',
 			cancel: 'Cancelar',
 			copy: 'Copiar',
 			print: 'Imprimir',
@@ -85,6 +85,11 @@ navigator.share = navigator.share || (function(){
 	}
 
 	return function ShareAPIPolyfill (data = {}) {
+
+		if (!data.title || typeof data.title !== 'string' || !data.text || typeof data.text !== 'string') {
+			reject('Invalid Params');
+		}
+
 		const { title, text, url, fbId, hashtags } = data;
 
 		return new Promise((resolve, reject) => {
@@ -410,6 +415,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 						}
+						resolve();
 						closeShareUI();
 					});
 				});
