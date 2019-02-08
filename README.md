@@ -57,3 +57,19 @@ navigator.share({
 Yup, it's open source and you can contribute to it :)
 
 Please refer to our [CONTRIBUTING.md](https://github.com/NascHQ/share-api-polyfill/blob/master/CONTRIBUTING.md) and help us improve this tool.
+
+To re-build id, just install the dependencies:
+
+```
+npm install
+```
+
+And build it with bulp
+
+```
+gulp
+```
+
+Also, if you need to change the image used for the sprites, it's base64 image.  
+You will find the sprite image (.png) in the src directory in case you want to change it and generate a new base64 code.
+
