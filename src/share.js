@@ -11,7 +11,7 @@ navigator.share = navigator.share || (function(){
 	
 	const idioms = {
 		pt: {
-			shareTitle: 'Comparilhar',
+			shareTitle: 'Compartilhar',
 			cancel: 'Cancelar',
 			copy: 'Copiar',
 			print: 'Imprimir',
