@@ -1,5 +1,27 @@
 {
-  "dependencies": {
+  "name": "share-api-polyfill",
+  "version": "1.0.0",
+  "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
+  "scripts": {
+    "build": "gulp",
+    "demo": "gulp && live-server --open=/demo/",
+    "gulp": "gulp",
+    "live-server": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NascHQ/share-api-polyfill.git"
+  },
+  "keywords": [],
+  "author": "NascHQ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NascHQ/share-api-polyfill/issues"
+  },
+  "homepage": "https://github.com/NascHQ/share-api-polyfill#readme",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-babel-minify": "^0.5.0",
     "gulp-clean": "^0.4.0",
@@ -12,6 +34,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-watch": "^5.0.1",
+    "live-server": "^1.2.1",
     "merge2": "^1.2.3"
   }
 }
