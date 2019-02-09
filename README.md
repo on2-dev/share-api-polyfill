@@ -12,7 +12,7 @@ This is a very simple, single file import polyfill.
 
 Just import it like so:
 
-```
+```html
 <script src="https://naschq.github.io/share-api-polyfill/dist/share-min.js"></script>
 ```
 
@@ -60,14 +60,20 @@ Please refer to our [CONTRIBUTING.md](https://github.com/NascHQ/share-api-polyfi
 
 To re-build id, just install the dependencies:
 
-```
+```sh
 npm install
 ```
 
 And build it with gulp
 
+```sh
+npm run build
 ```
-gulp
+
+And try it locally
+
+```sh
+npm run demo
 ```
 
 Also, if you need to change the image used for the sprites, it's base64 image.  
