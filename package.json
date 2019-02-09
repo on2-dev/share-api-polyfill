@@ -21,7 +21,7 @@
     "url": "https://github.com/NascHQ/share-api-polyfill/issues"
   },
   "homepage": "https://github.com/NascHQ/share-api-polyfill#readme",
-  "private": true,
+  "private": false,
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.0",

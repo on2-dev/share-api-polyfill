@@ -13,10 +13,18 @@ This is a very simple, single file import polyfill.
 Just import it like so:
 
 ```html
-<script src="https://naschq.github.io/share-api-polyfill/dist/share-min.js"></script>
+<script src="https://unpkg.com/share-api-polyfill@1.0.0/dist/share-min.js"></script>
 ```
 
-> Note that we are using the github cdn to load it, you could also save it in your own structure so you can cache it with service workers and have it "close" to your own domain.
+> Note that we are using the unpkg cdn to load it, you could also save it in your own structure so you can cache it with service workers and have it "close" to your own domain.
+
+You can also install it using npm:
+
+```sh
+npm install share-api-polyfill --save
+# or
+yarn add share-api-polyfill
+```
 
 Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.
 
