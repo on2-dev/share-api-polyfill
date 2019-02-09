@@ -10,6 +10,22 @@ navigator.share = navigator.share || (function(){
 	}
 	
 	const idioms = {
+		zh: {
+			shareTitle: '分享',
+			cancel: '取消',
+			copy: '複製連結',
+			print: '列印',
+			email: 'E-mail',
+			sms: '簡訊',
+			selectSms: '選擇聯絡人',
+			messenger: 'Messenger',
+			whatsapp: 'WhatsApp',
+			twitter: 'Twitter',
+			linkedin: 'Linkedin',
+			telegram: 'Telegram',
+			facebook: 'Facebook',
+			skype: 'Skype'
+		},
 		pt: {
 			shareTitle: 'Compartilhar',
 			cancel: 'Cancelar',
