@@ -141,7 +141,7 @@ navigator.share = navigator.share || (function(){
 					height: auto;
 					transition-delay: 150ms;
 					transform: translateY(100%);
-					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif;
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
 				}
 				#shareAPIPolyfill-backdrop.visible,
 				#shareAPIPolyfill-container.visible {
