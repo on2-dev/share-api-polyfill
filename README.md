@@ -64,7 +64,7 @@ To re-build id, just install the dependencies:
 npm install
 ```
 
-And build it with bulp
+And build it with gulp
 
 ```
 gulp
