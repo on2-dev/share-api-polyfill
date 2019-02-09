@@ -86,13 +86,14 @@ navigator.share = navigator.share || (function(){
 
 	return function ShareAPIPolyfill (data = {}) {
 
-		if (!data.title || typeof data.title !== 'string' || !data.text || typeof data.text !== 'string') {
-			reject('Invalid Params');
-		}
-
-		const { title, text, url, fbId, hashtags } = data;
-
 		return new Promise((resolve, reject) => {
+
+			if (!data.title || typeof data.title !== 'string' || !data.text || typeof data.text !== 'string') {
+				reject('Invalid Params');
+			}
+
+			const { title, text, url, fbId, hashtags } = data;
+
 			appendCSS(`
 				@media only screen and (max-width: 380px) {
 					.tool-icon {
