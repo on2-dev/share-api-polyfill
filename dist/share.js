@@ -10,6 +10,22 @@ navigator.share = navigator.share || (function(){
 	}
 	
 	const idioms = {
+		zh: {
+			shareTitle: '分享',
+			cancel: '取消',
+			copy: '複製連結',
+			print: '列印',
+			email: 'E-mail',
+			sms: '簡訊',
+			selectSms: '選擇聯絡人',
+			messenger: 'Messenger',
+			whatsapp: 'WhatsApp',
+			twitter: 'Twitter',
+			linkedin: 'Linkedin',
+			telegram: 'Telegram',
+			facebook: 'Facebook',
+			skype: 'Skype'
+		},
 		pt: {
 			shareTitle: 'Compartilhar',
 			cancel: 'Cancelar',
@@ -86,13 +102,14 @@ navigator.share = navigator.share || (function(){
 
 	return function ShareAPIPolyfill (data = {}) {
 
-		if (!data.title || typeof data.title !== 'string' || !data.text || typeof data.text !== 'string') {
-			reject('Invalid Params');
-		}
-
-		const { title, text, url, fbId, hashtags } = data;
-
 		return new Promise((resolve, reject) => {
+
+			if (!data.title || typeof data.title !== 'string' || !data.text || typeof data.text !== 'string') {
+				reject('Invalid Params');
+			}
+
+			const { title, text, url, fbId, hashtags } = data;
+
 			appendCSS(`
 				@media only screen and (max-width: 380px) {
 					.tool-icon {
@@ -125,7 +142,7 @@ navigator.share = navigator.share || (function(){
 					height: auto;
 					transition-delay: 150ms;
 					transform: translateY(100%);
-					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif;
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
 				}
 				#shareAPIPolyfill-backdrop.visible,
 				#shareAPIPolyfill-container.visible {

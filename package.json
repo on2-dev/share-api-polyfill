@@ -6,8 +6,10 @@
     "build": "gulp",
     "demo": "gulp && live-server --open=/demo/",
     "gulp": "gulp",
-    "live-server": "live-server"
+    "live-server": "live-server",
+    "prepublish": "npm run build"
   },
+  "main": "dist/share-min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NascHQ/share-api-polyfill.git"
