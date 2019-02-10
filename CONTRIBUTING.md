@@ -1,6 +1,6 @@
 You can contribute by:
 
-- Adding new languages to the `idiom` object
+- Adding new languages to the `languages` object
 - Adding support for new tools
 - Reporting bugs or suggesting improvements
 
