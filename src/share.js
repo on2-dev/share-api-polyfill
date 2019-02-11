@@ -65,7 +65,7 @@ navigator.share = navigator.share || (function(){
 			print: 'Imprimir',
 			email: 'Correo',
 			sms: 'SMS',
-			selectSms: 'Seleciona un contacto',
+			selectSms: 'Seleccionar un contacto',
 			messenger: 'Messenger',
 			whatsapp: 'Whatsapp',
 			twitter: 'Twitter',
@@ -128,17 +128,18 @@ navigator.share = navigator.share || (function(){
  margin: auto;
  width: 100%;
  height: 100%;
- transition: all linear 250ms;
+ transition: opacity linear 250ms;
+ will-change: opacity;
 }
 #shareAPIPolyfill-backdrop {
- background-color: rgba(0, 0, 0, 0.6);
- /*opacity: 0.6;*/
+	background-color: rgba(0, 0, 0, 0.6);
 }
 #shareAPIPolyfill-container {
  background-color: #f9f9f9;
  top: auto;
  max-width: 400px;
  height: auto;
+ transition: transform linear 250ms;
  transition-delay: 150ms;
  transform: translateY(100%);
  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
