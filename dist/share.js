@@ -9,7 +9,7 @@ navigator.share = navigator.share || (function(){
         return navigator.share;
 	}
 	
-	const idioms = {
+	const languages = {
 		zh: {
 			shareTitle: '分享',
 			cancel: '取消',
@@ -65,7 +65,7 @@ navigator.share = navigator.share || (function(){
 			print: 'Imprimir',
 			email: 'Correo',
 			sms: 'SMS',
-			selectSms: 'Seleciona un contacto',
+			selectSms: 'Seleccionar un contacto',
 			messenger: 'Messenger',
 			whatsapp: 'Whatsapp',
 			twitter: 'Twitter',
@@ -75,7 +75,7 @@ navigator.share = navigator.share || (function(){
 			skype: 'Skype'
 		}
 	};
-	const idiom = idioms[navigator.language.substr(0, 2).toLowerCase()] || idioms.en;
+	const language = languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en;
 
 	let android = navigator.userAgent.match(/Android/i);
     let ios = navigator.userAgent.match(/iPhone|iPad|iPod/i);
@@ -128,17 +128,18 @@ navigator.share = navigator.share || (function(){
  margin: auto;
  width: 100%;
  height: 100%;
- transition: all linear 250ms;
+ transition: opacity linear 250ms;
+ will-change: opacity;
 }
 #shareAPIPolyfill-backdrop {
- background-color: rgba(0, 0, 0, 0.6);
- /*opacity: 0.6;*/
+	background-color: rgba(0, 0, 0, 0.6);
 }
 #shareAPIPolyfill-container {
  background-color: #f9f9f9;
  top: auto;
  max-width: 400px;
  height: auto;
+ transition: transform linear 250ms;
  transition-delay: 150ms;
  transform: translateY(100%);
  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
@@ -235,23 +236,23 @@ navigator.share = navigator.share || (function(){
 
 			container.innerHTML = `
 <div class="shareAPIPolyfill-header">
- <div class="shareAPIPolyfill-header-title">${idiom.shareTitle}</div>
+ <div class="shareAPIPolyfill-header-title">${language.shareTitle}</div>
  <div class="shareAPIPolyfill-icons-container">
   <div class="tool-icon copy" data-tool="copy">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.copy}</div>
+   <div class="the-icon-title">${language.copy}</div>
   </div>
   <div class="tool-icon print" data-tool="print">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.print}</div>
+   <div class="the-icon-title">${language.print}</div>
   </div>
   <div class="tool-icon email" data-tool="email">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.email}</div>
+   <div class="the-icon-title">${language.email}</div>
   </div>
   <div class="tool-icon sms" data-tool="sms">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.sms}</div>
+   <div class="the-icon-title">${language.sms}</div>
   </div>
  </div>
 </div>
@@ -260,36 +261,36 @@ navigator.share = navigator.share || (function(){
   ${(fbId ? `
    <div class="tool-icon messenger" data-tool="messenger">
     <div class="the-icon"></div>
-    <div class="the-icon-title">${idiom.messenger}</div>
+    <div class="the-icon-title">${language.messenger}</div>
    </div>
   ` : '')}
   <div class="tool-icon facebook" data-tool="facebook">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.facebook}</div>
+   <div class="the-icon-title">${language.facebook}</div>
   </div>
   <div class="tool-icon whatsapp" data-tool="whatsapp">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.whatsapp}</div>
+   <div class="the-icon-title">${language.whatsapp}</div>
   </div>
   <div class="tool-icon twitter" data-tool="twitter">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.twitter}</div>
+   <div class="the-icon-title">${language.twitter}</div>
   </div>
   <div class="tool-icon linkedin" data-tool="linkedin">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.linkedin}</div>
+   <div class="the-icon-title">${language.linkedin}</div>
   </div>
   <div class="tool-icon telegram" data-tool="telegram">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.telegram}</div>
+   <div class="the-icon-title">${language.telegram}</div>
   </div>
   <div class="tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
    <div class="the-icon"></div>
-   <div class="the-icon-title">${idiom.skype}</div>
+   <div class="the-icon-title">${language.skype}</div>
   </div>
  </div>
  <div class="shareAPIPolyfill-footer">
-  ${idiom.cancel}
+  ${language.cancel}
  </div>
 </div>
 `;
@@ -353,7 +354,7 @@ navigator.share = navigator.share || (function(){
 							}
 							case 'sms': {
 								// window.open(toolsUrls.sms(title + ': \n' + url));
-								location.href = `sms:${idiom.selectSms}?&body=${title}: ${url}`;
+								location.href = `sms:${language.selectSms}?&body=${title}: ${url}`;
 								// window.open("sms:"+''+'?subject='+title+'&body='+url);
 								break;
 							}
