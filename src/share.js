@@ -5,19 +5,9 @@
 
 navigator.share = navigator.share || (function(){
 	
-    if (navigator.share) {
-        return navigator.share;
-	}
-	
 	const languages = {
-		zh: {
-			shareTitle: '分享',
-			cancel: '取消',
-			copy: '複製連結',
-			print: '列印',
-			email: 'E-mail',
-			sms: '簡訊',
-			selectSms: '選擇聯絡人',
+		default: {
+			sms: 'SMS',
 			messenger: 'Messenger',
 			whatsapp: 'WhatsApp',
 			twitter: 'Twitter',
@@ -26,21 +16,21 @@ navigator.share = navigator.share || (function(){
 			facebook: 'Facebook',
 			skype: 'Skype'
 		},
+		zh: {
+			shareTitle: '分享',
+			cancel: '取消',
+			copy: '複製連結',
+			print: '列印',
+			email: 'E-mail',
+			selectSms: '選擇聯絡人'
+		},
 		pt: {
 			shareTitle: 'Compartilhar',
 			cancel: 'Cancelar',
 			copy: 'Copiar',
 			print: 'Imprimir',
 			email: 'E-mail',
-			sms: 'SMS',
-			selectSms: 'Selecione um contato',
-			messenger: 'Messenger',
-			whatsapp: 'Whatsapp',
-			twitter: 'Twitter',
-			linkedin: 'Linkedin',
-			telegram: 'Telegram',
-			facebook: 'Facebook',
-			skype: 'Skype'
+			selectSms: 'Selecione um contato'
 		},
 		en: {
 			shareTitle: 'Share',
@@ -48,15 +38,7 @@ navigator.share = navigator.share || (function(){
 			copy: 'Copy',
 			print: 'Print',
 			email: 'E-mail',
-			sms: 'SMS',
-			selectSms: 'Pick a contact',
-			messenger: 'Messenger',
-			whatsapp: 'Whatsapp',
-			twitter: 'Twitter',
-			linkedin: 'Linkedin',
-			telegram: 'Telegram',
-			facebook: 'Facebook',
-			skype: 'Skype'
+			selectSms: 'Pick a contact'
 		},
 		es: {
 			shareTitle: 'Compartir',
@@ -64,23 +46,15 @@ navigator.share = navigator.share || (function(){
 			copy: 'Copiar',
 			print: 'Imprimir',
 			email: 'Correo',
-			sms: 'SMS',
-			selectSms: 'Seleccionar un contacto',
-			messenger: 'Messenger',
-			whatsapp: 'Whatsapp',
-			twitter: 'Twitter',
-			linkedin: 'Linkedin',
-			telegram: 'Telegram',
-			facebook: 'Facebook',
-			skype: 'Skype'
+			selectSms: 'Seleccionar un contacto'		
 		}
 	};
-	const language = languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en;
+	const language = {...languages.default, ...(languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
 
 	let android = navigator.userAgent.match(/Android/i);
 	let ios = navigator.userAgent.match(/iPhone|iPad|iPod/i);
     // let ios = navigator.userAgent.match(/iPhone|iPad|iPod|Macintosh/i);
-	let isDesktop = !(ios || android);
+	const isDesktop = !(ios || android);
 
 	function appendCSS (content) {
 		var css = content,
@@ -108,7 +82,8 @@ navigator.share = navigator.share || (function(){
 				reject('Invalid Params');
 			}
 
-			const { title, text, url, fbId, hashtags } = data;
+			const { title, url, fbId, hashtags } = data;
+			const text = data.text || title;
 
 			appendCSS(`
 @media only screen and (max-width: 380px) {
@@ -306,7 +281,7 @@ navigator.share = navigator.share || (function(){
 </div>
 `;
 
-			backdrop.addEventListener('click', event => {
+			backdrop.addEventListener('click', () => {
 				closeShareUI();
 			});
 
@@ -388,23 +363,20 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'whatsapp': {
-								const payload = title + ': ' + url;
+								const payload = text + ': ' + url;
 								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
 							case 'twitter': {
-								window.open(`http://twitter.com/share?text=${title}&url=${url}&hashtags=${hashtags || ''}`);
+								window.open(`http://twitter.com/share?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
 								break;
 							}
 							case 'linkedin': {
-								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${title}&source=LinkedIn`);
+								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${text}&source=LinkedIn`);
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + title: 'tg://msg?text=' + title + ': ' + payload));
-								break;
-							}
-							case '': {
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + text + ': ' + payload));
 								break;
 							}
 							case '': {
