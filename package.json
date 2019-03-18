@@ -1,6 +1,7 @@
 {
   "name": "share-api-polyfill",
   "version": "1.0.4",
+  "displayName": "Nasc Share API Polyfill",
   "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
   "scripts": {
     "build": "gulp",
@@ -14,7 +15,15 @@
     "type": "git",
     "url": "git+https://github.com/NascHQ/share-api-polyfill.git"
   },
-  "keywords": [],
+  "keywords": [
+    "share",
+    "share api",
+    "share-api",
+    "share polyfill",
+    "share-polyfill",
+    "share api polyfill",
+    "share-api-polyfill"
+  ],
   "author": "NascHQ",
   "license": "MIT",
   "bugs": {
