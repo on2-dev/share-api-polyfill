@@ -411,9 +411,6 @@ navigator.share = navigator.share || (function(){
 								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + text + ': ' + payload));
 								break;
 							}
-							case '': {
-								break;
-							}
 						}
 						resolve();
 						closeShareUI();
