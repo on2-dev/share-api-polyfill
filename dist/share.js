@@ -47,6 +47,14 @@ navigator.share = navigator.share || (function(){
 			print: 'Imprimir',
 			email: 'Correo',
 			selectSms: 'Seleccionar un contacto'
+		},
+		de: {
+			shareTitle: 'Teilen',
+			cancel: 'Abbrechen',
+			copy: 'Kopieren',
+			print: 'Drucken',
+			email: 'E-mail',
+			selectSms: 'Wählen Sie einen Kontakt aus'
 		}
 	};
 	const language = {...languages.default, ...(languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
