@@ -35,7 +35,7 @@
 <body>
     <input type="button" value="Share it" class="the-share-button" onclick="shareTheLink()" />
 
-    <script src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>
+    <script src="../dist/share-min.js"></script>
     <script>
         function shareTheLink () {
             navigator.share({
@@ -43,6 +43,21 @@
                 text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
                 url: location.href,
                 fbId: '136223956547034'
+            },
+            {
+              // change this configurations to hide specific unnecessary icons
+              copy: true,
+              email: true,
+              print: true,
+              sms: true,
+              messenger: true,
+              facebook: true,
+              whatsapp: true,
+              twitter: true,
+              linkedin: true,
+              telegram: true,
+              skype: true,
+              language: 'pt'
             })
             .then( _ => console.log('Yay, you shared it :)'))
             .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
@@ -50,3 +65,4 @@
     </script>
 </body>
 </html>
+
