@@ -167,6 +167,10 @@ navigator.share = navigator.share || (function(){
  border-top: solid 1px #EEE;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-footer {
+ width: 100%;
+ display: block;
+ border: none;
+ text-align: center;
  transition: opacity ease-in 250ms;
  border-top: solid 1px #EEE;
  background-color: #EEE;
@@ -184,6 +188,8 @@ navigator.share = navigator.share || (function(){
  flex-wrap: wrap;
 }
 #shareAPIPolyfill-container .tool-icon {
+ border: none;
+ display: inline0block;
  width: 25%;
  box-sizing: border-box;
  font-weight: 400;
@@ -195,10 +201,11 @@ navigator.share = navigator.share || (function(){
  padding: 20px 0;
 }
 #shareAPIPolyfill-container .tool-icon:hover {
-  box-shadow: 0 0 10px rgba(0,0,0, .125);
+  box-shadow: inset 0 0 20px rgba(0,0,0, .125);
 }
 #shareAPIPolyfill-container .the-icon-title {
  padding-top: 10px;
+ display: block;
 }
 .shareAPIPolyfill-header-title .the-icon {
 	display: inline-block;
@@ -242,66 +249,68 @@ navigator.share = navigator.share || (function(){
 			const backdrop = document.createElement('div');
 			const container = document.createElement('div');
 			backdrop.id = 'shareAPIPolyfill-backdrop';
-			container.id = 'shareAPIPolyfill-container';
+      container.id = 'shareAPIPolyfill-container';
+
+			container.setAttribute('tabindex', '0');
 
 			container.innerHTML = `
 <div class="shareAPIPolyfill-header">
- <div class="shareAPIPolyfill-header-title">${icon.share} ${language.shareTitle}</div>
+ <div class="shareAPIPolyfill-header-title" tabindex="0">${icon.share} ${language.shareTitle}</div>
  <div class="shareAPIPolyfill-icons-container title">
-  <div class="tool-icon copy" data-tool="copy">
+  <button class="tool-icon copy" data-tool="copy">
    ${icon.copy}
-   <div class="the-icon-title">${language.copy}</div>
-  </div>
-  <div class="tool-icon print" data-tool="print">
+   <span class="the-icon-title">${language.copy}</span>
+  </button>
+  <button class="tool-icon print" data-tool="print">
    ${icon.print}
-   <div class="the-icon-title">${language.print}</div>
-  </div>
-  <div class="tool-icon email" data-tool="email">
+   <span class="the-icon-title">${language.print}</span>
+  </button>
+  <button class="tool-icon email" data-tool="email">
    ${icon.email}
-   <div class="the-icon-title">${language.email}</div>
-  </div>
-  <div class="tool-icon sms" data-tool="sms">
+   <span class="the-icon-title">${language.email}</span>
+  </button>
+  <button class="tool-icon sms" data-tool="sms">
    ${icon.sms}
-   <div class="the-icon-title">${language.sms}</div>
-  </div>
+   <span class="the-icon-title">${language.sms}</span>
+  </button>
  </div>
 </div>
 <div class="shareAPIPolyfill-body">
  <div class="shareAPIPolyfill-icons-container body">
   ${(fbId ? `
-   <div class="tool-icon messenger" data-tool="messenger">
+   <button class="tool-icon messenger" data-tool="messenger">
     ${icon.messenger}
-    <div class="the-icon-title">${language.messenger}</div>
-   </div>
+    <span class="the-icon-title">${language.messenger}</span>
+   </button>
   ` : '')}
-  <div class="tool-icon facebook" data-tool="facebook">
+  <button class="tool-icon facebook" data-tool="facebook">
    ${icon.facebook}
-   <div class="the-icon-title">${language.facebook}</div>
-  </div>
-  <div class="tool-icon whatsapp" data-tool="whatsapp">
+   <span class="the-icon-title">${language.facebook}</span>
+  </button>
+  <button class="tool-icon whatsapp" data-tool="whatsapp">
    ${icon.whatsapp}
-   <div class="the-icon-title">${language.whatsapp}</div>
-  </div>
-  <div class="tool-icon twitter" data-tool="twitter">
+   <span class="the-icon-title">${language.whatsapp}</span>
+  </button>
+  <button class="tool-icon twitter" data-tool="twitter">
    ${icon.twitter}
-   <div class="the-icon-title">${language.twitter}</div>
-  </div>
-  <div class="tool-icon linkedin" data-tool="linkedin">
+   <span class="the-icon-title">${language.twitter}</span>
+  </button>
+  <button class="tool-icon linkedin" data-tool="linkedin">
    ${icon.linkedin}
-   <div class="the-icon-title">${language.linkedin}</div>
-  </div>
-  <div class="tool-icon telegram" data-tool="telegram">
+   <span class="the-icon-title">${language.linkedin}</span>
+  </button>
+  <button class="tool-icon telegram" data-tool="telegram">
    ${icon.telegram}
-   <div class="the-icon-title">${language.telegram}</div>
-  </div>
-  <div class="tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
+   <span class="the-icon-title">${language.telegram}</span>
+  </button>
+  <button class="tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
    ${icon.skype}
-   <div class="the-icon-title">${language.skype}</div>
-  </div>
+   <span class="the-icon-title">${language.skype}</span>
+  </button>
  </div>
- <div class="shareAPIPolyfill-footer">
+ <button class="shareAPIPolyfill-footer">
   ${language.cancel}
- </div>
+ </button>
 </div>
 `;
 
@@ -318,14 +327,16 @@ navigator.share = navigator.share || (function(){
 			// First, add the elements to the document in the current frame
 			requestAnimationFrame(_ => {
 				document.body.appendChild(backdrop);
-				document.body.appendChild(container);
+        document.body.appendChild(container);
 				document.addEventListener('keyup', keyCloseEvent);
 				bindEvents();
 				// Then, once the elements are added, add the "animatable status" classes
 				requestAnimationFrame(() => {
 					backdrop.classList.add('visible');
 					container.classList.add('visible');
-				})
+        })
+
+        document.getElementById('shareAPIPolyfill-container').focus();
 			});
 
 			function addSkypeSupport () {
