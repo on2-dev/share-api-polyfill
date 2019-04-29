@@ -308,7 +308,7 @@ navigator.share = navigator.share || (function(){
    <span class="the-icon-title">${language.skype}</span>
   </button>
  </div>
- <button class="shareAPIPolyfill-footer" tabindex="1">
+ <button class="shareAPIPolyfill-footer">
   ${language.cancel}
  </button>
 </div>
