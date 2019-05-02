@@ -189,7 +189,7 @@ navigator.share = navigator.share || (function(){
 }
 #shareAPIPolyfill-container .tool-icon {
  border: none;
- display: inline0block;
+ display: inline-block;
  width: 25%;
  box-sizing: border-box;
  font-weight: 400;
