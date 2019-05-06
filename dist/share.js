@@ -198,6 +198,7 @@ navigator.share = navigator.share || (function(){
  -moz-osx-font-smoothing: grayscale;
  text-align: center;
  cursor: pointer;
+ background-color: inherit;
  padding: 20px 0;
 }
 #shareAPIPolyfill-container .tool-icon:hover {
@@ -327,16 +328,16 @@ navigator.share = navigator.share || (function(){
 			// First, add the elements to the document in the current frame
 			requestAnimationFrame(_ => {
 				document.body.appendChild(backdrop);
-        document.body.appendChild(container);
+        		document.body.appendChild(container);
 				document.addEventListener('keyup', keyCloseEvent);
 				bindEvents();
 				// Then, once the elements are added, add the "animatable status" classes
 				requestAnimationFrame(() => {
 					backdrop.classList.add('visible');
 					container.classList.add('visible');
-        })
+        		})
 
-        document.getElementById('shareAPIPolyfill-container').focus();
+        		document.getElementById('shareAPIPolyfill-container').focus();
 			});
 
 			function addSkypeSupport () {

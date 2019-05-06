@@ -198,6 +198,7 @@ navigator.share = navigator.share || (function(){
  -moz-osx-font-smoothing: grayscale;
  text-align: center;
  cursor: pointer;
+ background-color: inherit;
  padding: 20px 0;
 }
 #shareAPIPolyfill-container .tool-icon:hover {
