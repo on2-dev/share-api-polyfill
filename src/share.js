@@ -400,7 +400,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + text + ': ' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + payload));
 								break;
 							}
 						}
