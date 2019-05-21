@@ -55,6 +55,14 @@ navigator.share = navigator.share || (function(){
 			print: 'Drucken',
 			email: 'E-mail',
 			selectSms: 'Wählen Sie einen Kontakt aus'
+		},
+		nl: {
+			shareTitle: 'Delen',
+			cancel: 'Annuleren',
+			copy: 'Kopiëren',
+			print: 'Printen',
+			email: 'E-mail',
+			selectSms: 'Selecteer een contact'
 		}
 	};
 	const language = {...languages.default, ...(languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
