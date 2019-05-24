@@ -350,6 +350,7 @@ navigator.share = navigator.share || (function(){
 			function bindEvents () {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
+            const payload = text + ': ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
 								navigator.clipboard.writeText(url);
@@ -387,7 +388,6 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'whatsapp': {
-								const payload = text + ': ' + url;
 								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
@@ -400,7 +400,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + text + ': ' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + payload));
 								break;
 							}
 						}
