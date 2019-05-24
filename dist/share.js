@@ -55,6 +55,14 @@ navigator.share = navigator.share || (function(){
 			print: 'Drucken',
 			email: 'E-mail',
 			selectSms: 'Wählen Sie einen Kontakt aus'
+		},
+		nl: {
+			shareTitle: 'Delen',
+			cancel: 'Annuleren',
+			copy: 'Kopiëren',
+			print: 'Printen',
+			email: 'E-mail',
+			selectSms: 'Selecteer een contact'
 		}
 	};
 	const language = {...languages.default, ...(languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
@@ -350,6 +358,7 @@ navigator.share = navigator.share || (function(){
 			function bindEvents () {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
+            const payload = text + ': ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
 								navigator.clipboard.writeText(url);
@@ -387,7 +396,6 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'whatsapp': {
-								const payload = text + ': ' + url;
 								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
 								break;
 							}
@@ -400,7 +408,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + text + ': ' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + payload));
 								break;
 							}
 						}
