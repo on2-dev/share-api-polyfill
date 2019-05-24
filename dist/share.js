@@ -64,10 +64,9 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
 		}
-	};
-	const language = {...languages.default, ...(languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
+  };
 
-	let android = navigator.userAgent.match(/Android/i);
+  let android = navigator.userAgent.match(/Android/i);
 	let ios = navigator.userAgent.match(/iPhone|iPad|iPod/i);
 	let mac = navigator.userAgent.match(/iPhone|iPad|iPod|Macintosh/i); // Test if mac to use ios/mac share icon on title, used to invoke the familiary concept.
 
@@ -109,7 +108,7 @@ navigator.share = navigator.share || (function(){
 		head.appendChild(style);
 	}
 
-	return function ShareAPIPolyfill (data = {}) {
+	return function ShareAPIPolyfill (data = {}, configurations = {}) {
 
 		return new Promise((resolve, reject) => {
 
@@ -117,68 +116,92 @@ navigator.share = navigator.share || (function(){
 				reject('Invalid Params');
 			}
 
-			const { title, url, fbId, hashtags } = data;
+      const { title, url, fbId, hashtags } = data;
+      const configs = { ...{
+          copy: true,
+          print: true,
+          email: true,
+          sms: true,
+          messenger: true,
+          facebook: true,
+          whatsapp: true,
+          twitter: true,
+          linkedin: true,
+          telegram: true,
+          skype: true,
+          language: 'en'
+        }, ...configurations };
+
+
+      /**
+       * Users may want to force the choice of a specific language
+       * if `configs.language` in `languages`) === force to use it
+       *
+       */
+      const language = {...languages.default, ...(languages[configs.language] ?
+          languages[configs.language] :
+          languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
+
 			const text = data.text || title;
 
 			appendCSS(`
 #shareAPIPolyfill-backdrop,
 #shareAPIPolyfill-container {
- opacity: 0;
- pointer-events: none;
- position: fixed;
- left: 0;
- top: 0;
- bottom: 0;
- right: 0;
- margin: auto;
- width: 100%;
- height: 100%;
- will-change: opacity;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  will-change: opacity;
 }
 #shareAPIPolyfill-backdrop {
-	transition: opacity linear 250ms;
-	background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity linear 250ms;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #shareAPIPolyfill-container {
- background-color: #f9f9f9;
- top: auto;
- max-width: 400px;
- height: auto;
- transition-property: transform,opacity;
- transition-timing-function: linear;
- transition-duration: 250ms;
- transition-delay: 150ms;
- transform: translateY(100%);
- font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
+  background-color: #f9f9f9;
+  top: auto;
+  max-width: 400px;
+  height: auto;
+  transition-property: transform,opacity;
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-delay: 150ms;
+  transform: translateY(100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Microsoft JhengHei";
 }
 #shareAPIPolyfill-backdrop.visible,
 #shareAPIPolyfill-container.visible {
- opacity: 1;
- pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 #shareAPIPolyfill-container.visible {
- transform: translateY(0);
+  transform: translateY(0);
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-header {
- background: #EEE;
+  background: #EEE;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-header .shareAPIPolyfill-icons-container {
- display: flex;
+  display: flex;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-header-title {
- background-color: #E0E0E0;
- padding: 10px 18px;
- color: #424242;
- font-weight: 600;
+  background-color: #E0E0E0;
+  padding: 10px 18px;
+  color: #424242;
+  font-weight: 600;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-body {
- border-top: solid 1px #EEE;
+  border-top: solid 1px #EEE;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-footer {
  width: 100%;
  display: block;
  border: none;
- text-align: center;
  transition: opacity ease-in 250ms;
  border-top: solid 1px #EEE;
  background-color: #EEE;
@@ -189,11 +212,11 @@ navigator.share = navigator.share || (function(){
  opacity: .5;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-footer:hover {
- opacity: 1;
+  opacity: 1;
 }
 #shareAPIPolyfill-container .shareAPIPolyfill-icons-container {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 #shareAPIPolyfill-container .tool-icon {
  border: none;
@@ -225,13 +248,16 @@ navigator.share = navigator.share || (function(){
 }
 .shareAPIPolyfill-icons-container.title .tool-icon .the-icon,
 .shareAPIPolyfill-icons-container.body .tool-icon .the-icon {
- display: block;
- margin: auto;
- width: 42px;
- height: 36px;
+  display: block;
+  margin: auto;
+  width: 42px;
+  height: 36px;
 }
 .shareAPIPolyfill-icons-container.title .tool-icon .the-icon {
- height: 24px;
+  height: 24px;
+}
+.shareAPIPolyfill-icons-container .hidden {
+  display: none !important;
 }
 `);
 
@@ -266,19 +292,19 @@ navigator.share = navigator.share || (function(){
 <div class="shareAPIPolyfill-header">
  <div class="shareAPIPolyfill-header-title" tabindex="0">${icon.share} ${language.shareTitle}</div>
  <div class="shareAPIPolyfill-icons-container title">
-  <button class="tool-icon copy" data-tool="copy">
+  <button class="${!configs.copy ? 'hidden': ''} tool-icon copy" data-tool="copy">
    ${icon.copy}
    <span class="the-icon-title">${language.copy}</span>
   </button>
-  <button class="tool-icon print" data-tool="print">
+  <button class="${!configs.print ? 'hidden': ''} tool-icon print" data-tool="print">
    ${icon.print}
    <span class="the-icon-title">${language.print}</span>
   </button>
-  <button class="tool-icon email" data-tool="email">
+  <button class="${!configs.email ? 'hidden': ''} tool-icon email" data-tool="email">
    ${icon.email}
    <span class="the-icon-title">${language.email}</span>
   </button>
-  <button class="tool-icon sms" data-tool="sms">
+  <button class="${!configs.sms ? 'hidden': ''} tool-icon sms" data-tool="sms">
    ${icon.sms}
    <span class="the-icon-title">${language.sms}</span>
   </button>
@@ -287,32 +313,32 @@ navigator.share = navigator.share || (function(){
 <div class="shareAPIPolyfill-body">
  <div class="shareAPIPolyfill-icons-container body">
   ${(fbId ? `
-   <button class="tool-icon messenger" data-tool="messenger">
+   <button class="tool-icon messenger ${!configs.messenger ? 'hidden': ''}" data-tool="messenger">
     ${icon.messenger}
     <span class="the-icon-title">${language.messenger}</span>
    </button>
   ` : '')}
-  <button class="tool-icon facebook" data-tool="facebook">
+  <button class="${!configs.facebook ? 'hidden': ''} tool-icon facebook" data-tool="facebook">
    ${icon.facebook}
    <span class="the-icon-title">${language.facebook}</span>
   </button>
-  <button class="tool-icon whatsapp" data-tool="whatsapp">
+  <button class="${!configs.whatsapp ? 'hidden': ''} tool-icon whatsapp" data-tool="whatsapp">
    ${icon.whatsapp}
    <span class="the-icon-title">${language.whatsapp}</span>
   </button>
-  <button class="tool-icon twitter" data-tool="twitter">
+  <button class="${!configs.twitter ? 'hidden': ''} tool-icon twitter" data-tool="twitter">
    ${icon.twitter}
    <span class="the-icon-title">${language.twitter}</span>
   </button>
-  <button class="tool-icon linkedin" data-tool="linkedin">
+  <button class="${!configs.linkedin ? 'hidden': ''} tool-icon linkedin" data-tool="linkedin">
    ${icon.linkedin}
    <span class="the-icon-title">${language.linkedin}</span>
   </button>
-  <button class="tool-icon telegram" data-tool="telegram">
+  <button class="${!configs.telegram ? 'hidden': ''} tool-icon telegram" data-tool="telegram">
    ${icon.telegram}
    <span class="the-icon-title">${language.telegram}</span>
   </button>
-  <button class="tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
+  <button class="${!configs.skype ? 'hidden': ''} tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
    ${icon.skype}
    <span class="the-icon-title">${language.skype}</span>
   </button>
