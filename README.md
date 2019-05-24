@@ -6,7 +6,7 @@ It also supports multilanguage (so far, available in English, Spanish, Portugues
 
 This is a very simple, single file import polyfill.
 
-![JavaScript Share API Polyfill in a Browser](https://github.com/NascHQ/share-api-polyfill/blob/master/demo/javascript-share-api-browser-polyfill.gif?raw=true)
+![JavaScript Share API Polyfill in a Browser](https://github.com/NascHQ/share-api-polyfill/blob/master/demo/demo.gif?raw=true)
 
 ## Installing it:
 
@@ -84,6 +84,5 @@ And try it locally
 npm run demo
 ```
 
-Also, if you need to change the image used for the sprites, it's base64 image.  
-You will find the sprite image (.png) in the src directory in case you want to change it and generate a new base64 code.
-
+Also, if you need to change the icons, they are SVGs located on the share.js script.
+You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.
