@@ -60,6 +60,44 @@ navigator.share({
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 ```
 
+### Turning features off, in Desktop
+
+You can disable some of the social buttons from the tool by passing a second object as argument.  
+As your mobile device will probably have native support for the share API, it will be ignored, being applied only for desktops.
+
+Example:
+
+```js
+navigator.share({
+    title: 'Web Share API Polyfill',
+    text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+    url: location.href,
+
+    fbId: '123456789123456',
+    hashtags: 'javascript,shareAPI,polyfill'
+  },
+  {
+    // change this configurations to hide specific unnecessary icons
+    copy: true,
+    email: true,
+    print: true,
+    sms: true,
+    messenger: true,
+    facebook: true,
+    whatsapp: true,
+    twitter: true,
+    linkedin: true,
+    telegram: true,
+    skype: true,
+    language: 'pt'
+  }
+)
+  .then( _ => console.log('Yay, you shared it :)'))
+  .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
+```
+
+  > If you disable Skype, it will no longer load Skype's SDK, what might be something you want, in case you would like to improve the privacy in your project, avoiding loading third party likeibraries.
+
 ## It's open source
 
 Yup, it's open source and you can contribute to it :)
