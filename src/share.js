@@ -139,7 +139,7 @@ navigator.share = navigator.share || (function(){
        *
        */
       const language = {
-        // mergin the default/general language terms with the custom one
+        // merging the default/general language terms with the custom one
         ...languages.default,
         ...(
           // looking for terms in the selected language (if supported)
