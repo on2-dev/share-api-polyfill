@@ -358,7 +358,11 @@ navigator.share = navigator.share || (function(){
 					closeShareUI();
 				}
 			}
-			addSkypeSupport();
+
+      if (configs.skype !== false) {
+        addSkypeSupport();
+      }
+
 			// First, add the elements to the document in the current frame
 			requestAnimationFrame(_ => {
 				document.body.appendChild(backdrop);

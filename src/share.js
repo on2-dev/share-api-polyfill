@@ -138,9 +138,20 @@ navigator.share = navigator.share || (function(){
        * if `configs.language` in `languages`) === force to use it
        *
        */
-      const language = {...languages.default, ...(languages[configs.language] ?
-          languages[configs.language] :
-          languages[navigator.language.substr(0, 2).toLowerCase()] || languages.en)};
+      const language = {
+        // mergin the default/general language terms with the custom one
+        ...languages.default,
+        ...(
+          // looking for terms in the selected language (if supported)
+          languages[configs.language]
+            ? languages[configs.language]
+            // if not supported, we try and use the default navigator language, or English as fallback
+            // if we have support for the specific navigator language (like es-AR, or pt-BR), we use it
+            : languages[navigator.language]
+              || languages[navigator.language.substr(0, 2).toLowerCase()]
+              || languages.en
+          )
+      };
 
 			const text = data.text || title;
 
