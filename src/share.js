@@ -445,7 +445,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'facebook': {
-								window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
+								window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`);
 								break;
 							}
 							case 'whatsapp': {
