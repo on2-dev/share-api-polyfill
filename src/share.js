@@ -439,13 +439,17 @@ navigator.share = navigator.share || (function(){
 										'&href=' + encodeURIComponent(url) +
 										'&link=' + encodeURIComponent(url) +
 										'&redirect_uri=' + encodeURIComponent(url) +
-										'&quote=' + title + ': ' + url
+										'&quote=' + encodeURIComponent(text)
 								);
 
 								break;
 							}
 							case 'facebook': {
-								window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`);
+								window.open(
+									'https://www.facebook.com/sharer/sharer.php?' +
+										'u=' + encodeURIComponent(url) +
+										'&quote=' + encodeURIComponent(text)
+								)
 								break;
 							}
 							case 'whatsapp': {
