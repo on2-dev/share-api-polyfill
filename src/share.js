@@ -48,6 +48,14 @@ navigator.share = navigator.share || (function(){
 			email: 'Correo',
 			selectSms: 'Seleccionar un contacto'
 		},
+		fr: {
+			shareTitle: 'Partager',
+			cancel: 'Annuler',
+			copy: 'Copier',
+			print: 'Imprimer',
+			email: 'E-mail',
+			selectSms: 'Veuillez choisir un contact'
+		},
 		de: {
 			shareTitle: 'Teilen',
 			cancel: 'Abbrechen',
