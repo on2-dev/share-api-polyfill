@@ -71,7 +71,15 @@ navigator.share = navigator.share || (function(){
 			print: 'Printen',
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
-		}
+		},
+    dk: {
+			shareTitle: 'Del',
+			cancel: 'Luk',
+			copy: 'Kopiér',
+			print: 'Udskriv',
+			email: 'E-mail',
+			selectSms: 'Vælg en kontaktperson'
+		},
   };
 
   let android = navigator.userAgent.match(/Android/i);
