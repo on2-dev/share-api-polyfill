@@ -48,6 +48,14 @@ navigator.share = navigator.share || (function(){
 			email: 'Correo',
 			selectSms: 'Seleccionar un contacto'
 		},
+		fr: {
+			shareTitle: 'Partager',
+			cancel: 'Annuler',
+			copy: 'Copier',
+			print: 'Imprimer',
+			email: 'E-mail',
+			selectSms: 'Veuillez choisir un contact'
+		},
 		de: {
 			shareTitle: 'Teilen',
 			cancel: 'Abbrechen',
@@ -63,6 +71,30 @@ navigator.share = navigator.share || (function(){
 			print: 'Printen',
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
+		},
+    dk: {
+			shareTitle: 'Del',
+			cancel: 'Luk',
+			copy: 'Kopiér',
+			print: 'Udskriv',
+			email: 'E-mail',
+			selectSms: 'Vælg en kontaktperson'
+		},
+    ru: {
+    	shareTitle: 'Поделиться',
+			cancel: 'Отмена',
+			copy: 'Скопировать',
+			print: 'Печать',
+			email: 'Э-майл',
+			selectSms: 'Выбери контакт'
+    },
+    tr: {
+			shareTitle: 'Paylaş',
+			cancel: 'Vazgeç',
+			copy: 'Kopyala',
+			print: 'Yazdır',
+			email: 'E-posta',
+			selectSms: 'Bir kişi seç'
 		}
   };
 
