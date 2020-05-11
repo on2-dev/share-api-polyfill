@@ -72,6 +72,14 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
 		},
+    dk: {
+			shareTitle: 'Del',
+			cancel: 'Luk',
+			copy: 'Kopiér',
+			print: 'Udskriv',
+			email: 'E-mail',
+			selectSms: 'Vælg en kontaktperson'
+		},
     ru: {
     	shareTitle: 'Поделиться',
 			cancel: 'Отмена',
