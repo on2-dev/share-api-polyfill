@@ -1,6 +1,6 @@
 # Share API Polyfill
 
-This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
+This is a (6kb) polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
 
 It also supports multilanguage (so far, available in English, Spanish, Portuguese and Chinese, and you can help us with that :) ).
 
@@ -36,9 +36,9 @@ The oficial share api works like this:
 
 ```js
 navigator.share({
-    title: 'Web Share API Polyfill',
-    text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
-    url: location.href
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href
 })
 .then( _ => console.log('Yay, you shared it :)'))
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
@@ -49,16 +49,39 @@ Also, you can pass in a list of hashtags to be used when sharing with twitter.
 
 ```js
 navigator.share({
-    title: 'Web Share API Polyfill',
-    text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
-    url: location.href,
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href,
 
-    fbId: '123456789123456',
-    hashtags: 'javascript,shareAPI,polyfill'
+  // extra, optional options
+  fbId: '123456789123456',
+  hashtags: ['javascript', 'shareAPI', 'Polyfill']
 })
 .then( _ => console.log('Yay, you shared it :)'))
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 ```
+
+> You can pass the hashtags as a single (comma separated) string, or as an array.
+
+### Multi language
+
+It will try and use the supported languages based on user's `browser language` configuration.  
+If the language is not found, it will uses a fallback (default english).
+
+Currently supported languages:
+
+- zh
+- pt
+- en
+- es
+- fr
+- de
+- nl
+- dk
+- ru
+- tr
+
+> Feel free to contribute with more languages sending Pull Requests for them :)
 
 ### Turning features off, in Desktop
 
@@ -89,14 +112,14 @@ navigator.share({
     linkedin: true,
     telegram: true,
     skype: true,
-    language: 'pt'
+    language: 'pt' // specify the default language
   }
 )
   .then( _ => console.log('Yay, you shared it :)'))
   .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 ```
 
-  > If you disable Skype, it will no longer load Skype's SDK, what might be something you want, in case you would like to improve the privacy in your project, avoiding loading third party likeibraries.
+  > If you disable Skype, it will no longer load Skype's SDK, what might be something you want, in case you would like to improve the privacy in your project, avoiding loading **third party libraries**.
 
 ## It's open source
 
