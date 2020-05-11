@@ -71,6 +71,14 @@ navigator.share = navigator.share || (function(){
 			print: 'Printen',
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
+		},
+    tr: {
+			shareTitle: 'Paylaş',
+			cancel: 'Vazgeç',
+			copy: 'Kopyala',
+			print: 'Yazdır',
+			email: 'E-posta',
+			selectSms: 'Bir kişi seç'
 		}
   };
 
