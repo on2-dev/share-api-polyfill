@@ -80,6 +80,22 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Vælg en kontaktperson'
 		},
+    ru: {
+    	shareTitle: 'Поделиться',
+			cancel: 'Отмена',
+			copy: 'Скопировать',
+			print: 'Печать',
+			email: 'Э-майл',
+			selectSms: 'Выбери контакт'
+    },
+    tr: {
+			shareTitle: 'Paylaş',
+			cancel: 'Vazgeç',
+			copy: 'Kopyala',
+			print: 'Yazdır',
+			email: 'E-posta',
+			selectSms: 'Bir kişi seç'
+		}
   };
 
   let android = navigator.userAgent.match(/Android/i);
