@@ -95,6 +95,14 @@ navigator.share = navigator.share || (function(){
 			print: 'Yazdır',
 			email: 'E-posta',
 			selectSms: 'Bir kişi seç'
+		},
+		ko: {
+			shareTitle: '공유',
+			cancel: '취소',
+			copy: '링크 복사',
+			print: '인쇄',
+			email: 'E-mail',
+			selectSms: '연락처를 선택하세요'
 		}
   };
 
