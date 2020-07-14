@@ -16,6 +16,30 @@ navigator.share = navigator.share || (function(){
 			facebook: 'Facebook',
 			skype: 'Skype'
 		},
+		cs: {
+			shareTitle: 'Sdílet',
+			cancel: 'Zrušit',
+			copy: 'Kopírovat',
+			print: 'Tisk',
+			email: 'E-mail',
+			selectSms: 'Vyberte kontakt'
+		},
+		sk: {
+			shareTitle: 'Zdieľať',
+			cancel: 'Zrušiť',
+			copy: 'Kopírovat',
+			print: 'Tlač',
+			email: 'E-mail',
+			selectSms: 'Vyberte kontakt'
+		},
+		ja: {
+			shareTitle: '共有する',
+			cancel: 'キャンセル',
+			copy: 'コピーする',
+			print: '印刷する',
+			email: 'E-mail',
+			selectSms: '連絡先を選択してください'
+		},
 		zh: {
 			shareTitle: '分享',
 			cancel: '取消',
