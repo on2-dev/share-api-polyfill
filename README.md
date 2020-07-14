@@ -71,16 +71,20 @@ If the language is not found, it will uses a fallback (default english).
 
 Currently supported languages:
 
-- zh
-- pt
+- cs
+- de
+- dk
 - en
 - es
 - fr
-- de
+- ja
+- ko
 - nl
-- dk
+- pt
 - ru
+- sk
 - tr
+- zh
 
 > Feel free to contribute with more languages sending Pull Requests for them :)
 
