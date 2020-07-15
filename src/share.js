@@ -96,6 +96,15 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
 		},
+    da: {
+			shareTitle: 'Del',
+			cancel: 'Luk',
+			copy: 'Kopiér',
+			print: 'Udskriv',
+			email: 'E-mail',
+			selectSms: 'Vælg en kontaktperson'
+		},
+    // Deprecated, use `da` instead.
     dk: {
 			shareTitle: 'Del',
 			cancel: 'Luk',
