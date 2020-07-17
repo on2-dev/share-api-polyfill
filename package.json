@@ -1,7 +1,7 @@
 {
   "name": "share-api-polyfill",
   "version": "1.0.14",
-  "displayName": "Nasc Share API Polyfill",
+  "displayName": "On2 & Nasc Share API Polyfill",
   "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js",
@@ -13,7 +13,7 @@
   "main": "dist/share-min.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NascHQ/share-api-polyfill.git"
+    "url": "git+https://github.com/on2-dev/share-api-polyfill.git"
   },
   "keywords": [
     "share",
@@ -27,9 +27,9 @@
   "author": "NascHQ",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NascHQ/share-api-polyfill/issues"
+    "url": "https://github.com/on2-dev/share-api-polyfill/issues"
   },
-  "homepage": "https://github.com/NascHQ/share-api-polyfill#readme",
+  "homepage": "https://github.com/on2-dev/share-api-polyfill#readme",
   "private": false,
   "dependencies": {},
   "devDependencies": {
