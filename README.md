@@ -73,7 +73,7 @@ Currently supported languages:
 
 - cs
 - de
-- dk
+- da
 - en
 - es
 - fr
