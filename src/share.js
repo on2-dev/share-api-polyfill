@@ -242,6 +242,7 @@ navigator.share = navigator.share || (function(){
   width: 100%;
   height: 100%;
   will-change: opacity;
+  z-index: 99999999;
 }
 #shareAPIPolyfill-backdrop {
   transition: opacity linear 250ms;
