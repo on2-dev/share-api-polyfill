@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const babel = require('gulp-babel');
 
 const distPath = 'dist/';
 const srcPath = 'src/';
@@ -27,7 +28,7 @@ gulp.task('webserver', async function() {
       root: ['.', 'dist']
     });
 });
-   
+
 gulp.task('livereload', async function() {
     gulp.src(['dist/scripts/*.js'])
       .pipe(watch())
@@ -36,9 +37,16 @@ gulp.task('livereload', async function() {
 
 gulp.task('minifyJs', async function () {
     gulp.src([srcPath + '/*.js'])
+        .pipe(
+          babel({
+            presets: ['@babel/preset-env']
+          })
+        )
         .pipe(minify())
         .pipe(gulp.dest('dist'))
 });
+
+// transform-object-rest-spread
 
 // gulp.task('default', gulp.parallel(['minifyJs', 'livereload', 'watch']));
 gulp.task('default', gulp.parallel(['minifyJs']));
