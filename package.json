@@ -4,11 +4,13 @@
   "displayName": "On2 & Nasc Share API Polyfill",
   "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
   "scripts": {
-    "build": "node ./node_modules/gulp/bin/gulp.js",
-    "demo": "node ./node_modules/gulp/bin/gulp.js && live-server --open=/demo/",
-    "gulp": "node ./node_modules/gulp/bin/gulp.js",
+    "demo": "npm run build && live-server --open=/demo/",
     "live-server": "live-server demo/",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "clean": "rm dist/bundle.js",
+    "build": "npm run build-dev && npm run build-prod",
+    "build-dev": "webpack -d --mode development",
+    "build-prod": "webpack -p --mode production"
   },
   "main": "dist/share-min.js",
   "repository": {
@@ -30,31 +32,17 @@
     "url": "https://github.com/on2-dev/share-api-polyfill/issues"
   },
   "homepage": "https://github.com/on2-dev/share-api-polyfill#readme",
-  "babel": {
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
-  },
   "private": false,
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-babel-minify": "^0.5.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-insert": "^0.5.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-watch": "^5.0.1",
     "live-server": "^1.2.1",
-    "merge2": "^1.2.3"
+    "merge2": "^1.4.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

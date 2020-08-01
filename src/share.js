@@ -492,7 +492,10 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'print': {
-								self.print();
+                // to ensure it has been closed and the user has a clean view of the page
+                setTimeout(_ => {
+                  self.print();
+                }, 500);
 								break;
 							}
 							case 'email': {
