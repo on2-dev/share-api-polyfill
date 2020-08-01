@@ -6,8 +6,8 @@ It also supports multilanguage (so far, available in English, Spanish, Portugues
 
 This is a very simple, single file import polyfill.
 
-![JavaScript Share API Polyfill in a Browser](https://github.com/NascHQ/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
-[see the share api polyfill in action](https://naschq.github.io/share-api-polyfill/demo/)
+![JavaScript Share API Polyfill in a Browser](https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
+[see the share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
 
 ## Installing it:
 
