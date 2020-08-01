@@ -536,6 +536,6 @@ ASALocalRun/
 healthchecksdb
 
 # Generic directories
-dist/
+# dist/
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudio,visualstudiocode
