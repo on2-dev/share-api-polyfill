@@ -136,6 +136,14 @@ navigator.share = navigator.share || (function(){
 			print: '인쇄',
 			email: 'E-mail',
 			selectSms: '연락처를 선택하세요'
+		},
+		pl: {
+			shareTitle: 'Dzielić',
+			cancel: 'Anuluj',
+			copy: 'Kopiuj',
+			print: 'Wydrukować',
+			email: 'E-mail',
+			selectSms: 'Wybierz kontakt'
 		}
   };
 
