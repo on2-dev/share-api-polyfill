@@ -84,6 +84,7 @@ Currently supported languages:
 - pl
 - pt
 - ru
+- sv
 - sk
 - tr
 - zh

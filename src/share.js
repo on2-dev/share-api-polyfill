@@ -95,6 +95,14 @@ navigator.share = navigator.share || (function () {
 			print: 'Printen',
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
+    },
+    sv: {
+			shareTitle: 'Dela',
+			cancel: 'Avbryt',
+			copy: 'Kopiera',
+			print: 'Skriv ut',
+			email: 'E-mail',
+			selectSms: 'Välj en kontakt'
 		},
 		da: {
 			shareTitle: 'Del',
