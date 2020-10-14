@@ -1,6 +1,6 @@
 {
   "name": "share-api-polyfill",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "displayName": "On2 & Nasc Share API Polyfill",
   "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
   "scripts": {
