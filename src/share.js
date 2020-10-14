@@ -3,7 +3,7 @@
 // 	  http://chriswren.github.io/native-social-interactions/
 //    https://nimiq.github.io/web-share-shim/demo/
 
-navigator.share = navigator.share || (function(){
+navigator.share = navigator.share || (function () {
 
 	const languages = {
 		default: {
@@ -96,7 +96,7 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
 		},
-    da: {
+		da: {
 			shareTitle: 'Del',
 			cancel: 'Luk',
 			copy: 'Kopiér',
@@ -104,8 +104,8 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Vælg en kontaktperson'
 		},
-    // Deprecated, use `da` instead.
-    dk: {
+		// Deprecated, use `da` instead.
+		dk: {
 			shareTitle: 'Del',
 			cancel: 'Luk',
 			copy: 'Kopiér',
@@ -113,15 +113,15 @@ navigator.share = navigator.share || (function(){
 			email: 'E-mail',
 			selectSms: 'Vælg en kontaktperson'
 		},
-    ru: {
-    	shareTitle: 'Поделиться',
+		ru: {
+			shareTitle: 'Поделиться',
 			cancel: 'Отмена',
 			copy: 'Скопировать',
 			print: 'Печать',
 			email: 'Э-майл',
 			selectSms: 'Выбери контакт'
-    },
-    tr: {
+		},
+		tr: {
 			shareTitle: 'Paylaş',
 			cancel: 'Vazgeç',
 			copy: 'Kopyala',
@@ -136,10 +136,18 @@ navigator.share = navigator.share || (function(){
 			print: '인쇄',
 			email: 'E-mail',
 			selectSms: '연락처를 선택하세요'
+		},
+		ta: {
+			shareTitle: 'பகிர்',
+			cancel: 'இரத்து',
+			copy: 'நகலெடு',
+			print: 'அச்சிடு',
+			email: 'மின்னஞ்சல்',
+			selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
 		}
-  };
+	};
 
-  let android = navigator.userAgent.match(/Android/i);
+	let android = navigator.userAgent.match(/Android/i);
 	let ios = navigator.userAgent.match(/iPhone|iPad|iPod/i);
 	let mac = navigator.userAgent.match(/iPhone|iPad|iPod|Macintosh/i); // Test if mac to use ios/mac share icon on title, used to invoke the familiary concept.
 
@@ -163,13 +171,13 @@ navigator.share = navigator.share || (function(){
 		'skype': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#00aff0" d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z"></path></svg>'
 	}
 
-	function appendCSS (content) {
+	function appendCSS(content) {
 		var css = content,
 			head = document.head || document.getElementsByTagName('head')[0],
 			style = document.createElement('style');
 
 		style.type = 'text/css';
-		if (style.styleSheet){
+		if (style.styleSheet) {
 			// This is required for IE8 and below.
 			style.styleSheet.cssText = css;
 		} else {
@@ -181,7 +189,7 @@ navigator.share = navigator.share || (function(){
 		head.appendChild(style);
 	}
 
-	return function ShareAPIPolyfill (data = {}, configurations = {}) {
+	return function ShareAPIPolyfill(data = {}, configurations = {}) {
 
 		return new Promise((resolve, reject) => {
 
@@ -189,42 +197,44 @@ navigator.share = navigator.share || (function(){
 				reject('Invalid Params');
 			}
 
-      const { title, url, fbId, hashtags } = data;
-      const configs = { ...{
-          copy: true,
-          print: true,
-          email: true,
-          sms: true,
-          messenger: true,
-          facebook: true,
-          whatsapp: true,
-          twitter: true,
-          linkedin: true,
-          telegram: true,
-          skype: true,
-          language: 'en'
-        }, ...configurations };
+			const { title, url, fbId, hashtags } = data;
+			const configs = {
+				...{
+					copy: true,
+					print: true,
+					email: true,
+					sms: true,
+					messenger: true,
+					facebook: true,
+					whatsapp: true,
+					twitter: true,
+					linkedin: true,
+					telegram: true,
+					skype: true,
+					language: 'en'
+				}, ...configurations
+			};
 
 
-      /**
-       * Users may want to force the choice of a specific language
-       * if `configs.language` in `languages`) === force to use it
-       *
-       */
-      const language = {
-        // merging the default/general language terms with the custom one
-        ...languages.default,
-        ...(
-          // looking for terms in the selected language (if supported)
-          languages[configs.language]
-            ? languages[configs.language]
-            // if not supported, we try and use the default navigator language, or English as fallback
-            // if we have support for the specific navigator language (like es-AR, or pt-BR), we use it
-            : languages[navigator.language]
-              || languages[navigator.language.substr(0, 2).toLowerCase()]
-              || languages.en
-          )
-      };
+			/**
+			 * Users may want to force the choice of a specific language
+			 * if `configs.language` in `languages`) === force to use it
+			 *
+			 */
+			const language = {
+				// merging the default/general language terms with the custom one
+				...languages.default,
+				...(
+					// looking for terms in the selected language (if supported)
+					languages[configs.language]
+						? languages[configs.language]
+						// if not supported, we try and use the default navigator language, or English as fallback
+						// if we have support for the specific navigator language (like es-AR, or pt-BR), we use it
+						: languages[navigator.language]
+						|| languages[navigator.language.substr(0, 2).toLowerCase()]
+						|| languages.en
+				)
+			};
 
 			const text = data.text || title;
 
@@ -346,7 +356,7 @@ navigator.share = navigator.share || (function(){
 }
 `);
 
-			function closeShareUI () {
+			function closeShareUI() {
 				const removeBackdrop = () => {
 					backdrop.removeEventListener('transitionend', removeBackdrop);
 					document.body.removeChild(backdrop);
@@ -362,14 +372,14 @@ navigator.share = navigator.share || (function(){
 				backdrop.classList.remove('visible');
 				container.classList.remove('visible');
 
-				backdrop.addEventListener('transitionend',  removeBackdrop);
+				backdrop.addEventListener('transitionend', removeBackdrop);
 				container.addEventListener('transitionend', removeContainer);
 			}
 
 			const backdrop = document.createElement('div');
 			const container = document.createElement('div');
 			backdrop.id = 'shareAPIPolyfill-backdrop';
-      container.id = 'shareAPIPolyfill-container';
+			container.id = 'shareAPIPolyfill-container';
 
 			container.setAttribute('tabindex', '0');
 
@@ -377,19 +387,19 @@ navigator.share = navigator.share || (function(){
 <div class="shareAPIPolyfill-header">
  <div class="shareAPIPolyfill-header-title" tabindex="0">${icon.share} ${language.shareTitle}</div>
  <div class="shareAPIPolyfill-icons-container title">
-  <button class="${!configs.copy ? 'hidden': ''} tool-icon copy" data-tool="copy">
+  <button class="${!configs.copy ? 'hidden' : ''} tool-icon copy" data-tool="copy">
    ${icon.copy}
    <span class="the-icon-title">${language.copy}</span>
   </button>
-  <button class="${!configs.print ? 'hidden': ''} tool-icon print" data-tool="print">
+  <button class="${!configs.print ? 'hidden' : ''} tool-icon print" data-tool="print">
    ${icon.print}
    <span class="the-icon-title">${language.print}</span>
   </button>
-  <button class="${!configs.email ? 'hidden': ''} tool-icon email" data-tool="email">
+  <button class="${!configs.email ? 'hidden' : ''} tool-icon email" data-tool="email">
    ${icon.email}
    <span class="the-icon-title">${language.email}</span>
   </button>
-  <button class="${!configs.sms ? 'hidden': ''} tool-icon sms" data-tool="sms">
+  <button class="${!configs.sms ? 'hidden' : ''} tool-icon sms" data-tool="sms">
    ${icon.sms}
    <span class="the-icon-title">${language.sms}</span>
   </button>
@@ -398,32 +408,32 @@ navigator.share = navigator.share || (function(){
 <div class="shareAPIPolyfill-body">
  <div class="shareAPIPolyfill-icons-container body">
   ${(fbId ? `
-   <button class="tool-icon messenger ${!configs.messenger ? 'hidden': ''}" data-tool="messenger">
+   <button class="tool-icon messenger ${!configs.messenger ? 'hidden' : ''}" data-tool="messenger">
     ${icon.messenger}
     <span class="the-icon-title">${language.messenger}</span>
    </button>
   ` : '')}
-  <button class="${!configs.facebook ? 'hidden': ''} tool-icon facebook" data-tool="facebook">
+  <button class="${!configs.facebook ? 'hidden' : ''} tool-icon facebook" data-tool="facebook">
    ${icon.facebook}
    <span class="the-icon-title">${language.facebook}</span>
   </button>
-  <button class="${!configs.whatsapp ? 'hidden': ''} tool-icon whatsapp" data-tool="whatsapp">
+  <button class="${!configs.whatsapp ? 'hidden' : ''} tool-icon whatsapp" data-tool="whatsapp">
    ${icon.whatsapp}
    <span class="the-icon-title">${language.whatsapp}</span>
   </button>
-  <button class="${!configs.twitter ? 'hidden': ''} tool-icon twitter" data-tool="twitter">
+  <button class="${!configs.twitter ? 'hidden' : ''} tool-icon twitter" data-tool="twitter">
    ${icon.twitter}
    <span class="the-icon-title">${language.twitter}</span>
   </button>
-  <button class="${!configs.linkedin ? 'hidden': ''} tool-icon linkedin" data-tool="linkedin">
+  <button class="${!configs.linkedin ? 'hidden' : ''} tool-icon linkedin" data-tool="linkedin">
    ${icon.linkedin}
    <span class="the-icon-title">${language.linkedin}</span>
   </button>
-  <button class="${!configs.telegram ? 'hidden': ''} tool-icon telegram" data-tool="telegram">
+  <button class="${!configs.telegram ? 'hidden' : ''} tool-icon telegram" data-tool="telegram">
    ${icon.telegram}
    <span class="the-icon-title">${language.telegram}</span>
   </button>
-  <button class="${!configs.skype ? 'hidden': ''} tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
+  <button class="${!configs.skype ? 'hidden' : ''} tool-icon skype skype-share" data-tool="skype" data-href="${url}" data-text="${title + ': ' + url}">
    ${icon.skype}
    <span class="the-icon-title">${language.skype}</span>
   </button>
@@ -438,34 +448,34 @@ navigator.share = navigator.share || (function(){
 				closeShareUI();
 			});
 
-			function keyCloseEvent (event) {
+			function keyCloseEvent(event) {
 				if (event.keyCode === 27) { // ESC
 					closeShareUI();
 				}
 			}
 
-      if (configs.skype !== false) {
-        addSkypeSupport();
-      }
+			if (configs.skype !== false) {
+				addSkypeSupport();
+			}
 
 			// First, add the elements to the document in the current frame
 			requestAnimationFrame(_ => {
 				document.body.appendChild(backdrop);
-        		document.body.appendChild(container);
+				document.body.appendChild(container);
 				document.addEventListener('keyup', keyCloseEvent);
 				bindEvents();
 				// Then, once the elements are added, add the "animatable status" classes
 				requestAnimationFrame(() => {
 					backdrop.classList.add('visible');
 					container.classList.add('visible');
-        		})
+				})
 
-        		document.getElementById('shareAPIPolyfill-container').focus();
+				document.getElementById('shareAPIPolyfill-container').focus();
 			});
 
-			function addSkypeSupport () {
-				(function(r, d, s) {
-					r.loadSkypeWebSdkAsync = r.loadSkypeWebSdkAsync || function(p) {
+			function addSkypeSupport() {
+				(function (r, d, s) {
+					r.loadSkypeWebSdkAsync = r.loadSkypeWebSdkAsync || function (p) {
 						var js, sjs = d.getElementsByTagName(s)[0];
 						if (d.getElementById(p.id)) { return; }
 						js = d.createElement(s);
@@ -482,24 +492,24 @@ navigator.share = navigator.share || (function(){
 				})(window, document, 'script');
 			}
 
-			function bindEvents () {
+			function bindEvents() {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
-            const payload = text + ': ' + url;
+						const payload = text + ': ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
 								navigator.clipboard.writeText(url);
 								break;
 							}
 							case 'print': {
-                // to ensure it has been closed and the user has a clean view of the page
-                setTimeout(_ => {
-                  self.print();
-                }, 500);
+								// to ensure it has been closed and the user has a clean view of the page
+								setTimeout(_ => {
+									self.print();
+								}, 500);
 								break;
 							}
 							case 'email': {
-								window.open("mailto:"+''+'?subject='+title+'&body='+url);
+								window.open("mailto:" + '' + '?subject=' + title + '&body=' + url);
 								break;
 							}
 							case 'sms': {
@@ -511,12 +521,12 @@ navigator.share = navigator.share || (function(){
 							case 'messenger': {
 								window.open(
 									'http://www.facebook.com/dialog/send?' +
-										'app_id=' + fbId +
-										'&display=popup' +
-										'&href=' + encodeURIComponent(url) +
-										'&link=' + encodeURIComponent(url) +
-										'&redirect_uri=' + encodeURIComponent(url) +
-										'&quote=' + encodeURIComponent(text)
+									'app_id=' + fbId +
+									'&display=popup' +
+									'&href=' + encodeURIComponent(url) +
+									'&link=' + encodeURIComponent(url) +
+									'&redirect_uri=' + encodeURIComponent(url) +
+									'&quote=' + encodeURIComponent(text)
 								);
 
 								break;
@@ -524,8 +534,8 @@ navigator.share = navigator.share || (function(){
 							case 'facebook': {
 								window.open(
 									'https://www.facebook.com/sharer/sharer.php?' +
-										'u=' + encodeURIComponent(url) +
-										'&quote=' + encodeURIComponent(text)
+									'u=' + encodeURIComponent(url) +
+									'&quote=' + encodeURIComponent(text)
 								)
 								break;
 							}
@@ -536,13 +546,13 @@ navigator.share = navigator.share || (function(){
 							case 'twitter': {
 								window.open(`http://twitter.com/share?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
 								break;
-              }
+							}
 							case 'linkedin': {
 								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${text}&source=LinkedIn`);
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url=' + url + '&text=' + text : 'tg://msg?text=' + payload));
 								break;
 							}
 						}
