@@ -143,7 +143,15 @@ navigator.share = navigator.share || (function () {
 			copy: 'நகலெடு',
 			print: 'அச்சிடு',
 			email: 'மின்னஞ்சல்',
-			selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
+      selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
+    },
+		pl: {
+			shareTitle: 'Dzielić',
+			cancel: 'Anuluj',
+			copy: 'Kopiuj',
+			print: 'Wydrukować',
+			email: 'E-mail',
+			selectSms: 'Wybierz kontakt'
 		}
 	};
 
