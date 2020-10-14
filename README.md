@@ -2,7 +2,7 @@
 
 This is a (6kb) polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
 
-It also supports multilanguage (so far, available in English, Spanish, Portuguese and Chinese, and you can help us with that :) ).
+It also supports multilanguage (so far, available in English, Spanish, Polish, Portuguese and Chinese, and you can help us with that :) ).
 
 This is a very simple, single file import polyfill.
 
@@ -80,6 +80,7 @@ Currently supported languages:
 - ja
 - ko
 - nl
+- pl
 - pt
 - ru
 - sk
