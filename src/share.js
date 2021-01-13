@@ -256,7 +256,7 @@ navigator.share = navigator.share || (function () {
 			};
 
 			const text = data.text || title;
-			const image = data.image;
+			const image = encodeURIComponent(data.image);
 
 			appendCSS(`
 #shareAPIPolyfill-backdrop,
