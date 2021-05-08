@@ -120,6 +120,7 @@ navigator.share({
     linkedin: true,
     telegram: true,
     skype: true,
+    pinterest: true,
     language: 'pt' // specify the default language
   }
 )
