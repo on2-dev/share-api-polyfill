@@ -44,8 +44,8 @@
 <body>
   <input type="button" value="Share it" class="the-share-button" onclick="shareTheLink()" />
 
-  <script src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>
-  <!-- <script src="../dist/share-min.js"></script> -->
+  <!-- <script src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script> -->
+  <script src="../dist/share-min.js"></script>
   <script>
       function shareTheLink () {
         navigator.share({
@@ -69,6 +69,7 @@
           linkedin: true,
           telegram: true,
           skype: true,
+          pinterest: true,
           language: 'pt'
         })
         .then( _ => console.log('Yay, you shared it :)'))
