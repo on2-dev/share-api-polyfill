@@ -160,6 +160,14 @@ navigator.share = navigator.share || (function () {
 			print: 'Wydrukować',
 			email: 'E-mail',
 			selectSms: 'Wybierz kontakt'
+		},
+    is: {
+			shareTitle: 'Deila',
+			cancel: 'Hætta við',
+			copy: 'Afrita',
+			print: 'Prenta',
+			email: 'Póstur',
+			selectSms: 'Veldu tengilið'
 		}
 	};
 
