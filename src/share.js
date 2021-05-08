@@ -563,7 +563,7 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'twitter': {
-								window.open(`http://twitter.com/share?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
+								window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
 								break;
 							}
 							case 'linkedin': {
