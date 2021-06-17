@@ -77,6 +77,7 @@ Currently supported languages:
 - en
 - es
 - fr
+- is
 - ja
 - ko
 - nl
