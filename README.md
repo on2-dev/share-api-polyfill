@@ -29,7 +29,7 @@ yarn add share-api-polyfill
 
 Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.
 
-Here, check this demo and see the [share api polyfill in action](https://naschq.github.io/share-api-polyfill/demo/).
+Here, check this demo and see the [share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/).
 
 ## The Share API
 
@@ -134,7 +134,7 @@ navigator.share({
 
 Yup, it's open source and you can contribute to it :)
 
-Please refer to our [CONTRIBUTING.md](https://github.com/NascHQ/share-api-polyfill/blob/master/CONTRIBUTING.md) and help us improve this tool.
+Please refer to our [CONTRIBUTING.md](https://github.com/on2-dev/share-api-polyfill/blob/master/CONTRIBUTING.md) and help us improve this tool.
 
 To re-build id, just install the dependencies:
 
