@@ -226,7 +226,7 @@ navigator.share = navigator.share || (function () {
 				reject('Invalid Params');
 			}
 
-			const { title, url, fbId, hashtags } = data;
+			const { title, url, fbId, hashtags, via } = data;
 			const configs = {
 				...{
 					copy: true,
@@ -579,7 +579,7 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'twitter': {
-								window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
+								window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags || ''}&via=${via || ''}`);
 								break;
 							}
 							case 'linkedin': {
