@@ -570,7 +570,8 @@ navigator.share = navigator.share || (function () {
 								window.open(
 									'https://www.facebook.com/sharer/sharer.php?' +
 									'u=' + encodeURIComponent(url) +
-									'&quote=' + encodeURIComponent(text)
+									'&quote=' + encodeURIComponent(text) +
+                  '&hashtag=' + (hashtags || '')
 								)
 								break;
 							}
