@@ -533,7 +533,7 @@ navigator.share = navigator.share || (function () {
 						const payload = text + ': ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
-								navigator.clipboard.writeText(url);
+								navigator.clipboard.writeText(`${title}\n${data.text || ''}\n${url}`);
 								break;
 							}
 							case 'print': {
@@ -544,12 +544,15 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'email': {
-								window.open("mailto:" + '' + '?subject=' + title + '&body=' + url);
+                // %0D%0A is newline
+                const emailText = `${text}%0D%0A`
+                const mailto = `mailto:?subject=${title}&body=${emailText}${url}`
+								window.open(mailto);
 								break;
 							}
 							case 'sms': {
 								// window.open(toolsUrls.sms(title + ': \n' + url));
-								location.href = `sms:${language.selectSms}?&body=${title}: ${url}`;
+								location.href = `sms:${language.selectSms}?&body=${title}: ${data.text || ''} ${url}`;
 								// window.open("sms:"+''+'?subject='+title+'&body='+url);
 								break;
 							}
