@@ -530,7 +530,7 @@ navigator.share = navigator.share || (function () {
 			function bindEvents() {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
-						const payload = text + ': ' + url;
+						const payload = encodeURIComponent(text + ': ' + url);
 						switch (tool.dataset.tool) {
 							case 'copy': {
 								navigator.clipboard.writeText(url);
@@ -583,15 +583,15 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'linkedin': {
-								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${text}&source=LinkedIn`);
+								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${title}&summary=${text}&source=LinkedIn`);
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url=' + url + '&text=' + encodeURIComponent(text) : 'tg://msg?text=' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text) : 'tg://msg?text=' + payload));
 								break;
 							}
 							case 'pinterest': {
-								window.open('https://pinterest.com/pin/create/button/?url=' + url + '&description=' + encodeURIComponent(text) + '&media=' + image);
+								window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&description=' + encodeURIComponent(text) + '&media=' + image);
 								break;
 							}
 						}
