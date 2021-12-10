@@ -579,7 +579,7 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'twitter': {
-								window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
+								window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags || ''}`);
 								break;
 							}
 							case 'linkedin': {
@@ -587,11 +587,11 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url=' + url + '&text=' + text : 'tg://msg?text=' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url=' + url + '&text=' + encodeURIComponent(text) : 'tg://msg?text=' + payload));
 								break;
 							}
 							case 'pinterest': {
-								window.open('https://pinterest.com/pin/create/button/?url=' + url + '&description=' + text + '&media=' + image);
+								window.open('https://pinterest.com/pin/create/button/?url=' + url + '&description=' + encodeURIComponent(text) + '&media=' + image);
 								break;
 							}
 						}
