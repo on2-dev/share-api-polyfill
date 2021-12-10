@@ -226,7 +226,7 @@ navigator.share = navigator.share || (function () {
 				reject('Invalid Params');
 			}
 
-			const { title, url, fbId, hashtags } = data;
+			const { title, url, fbId, hashtags, hashtag } = data;
 			const configs = {
 				...{
 					copy: true,
@@ -571,7 +571,7 @@ navigator.share = navigator.share || (function () {
 									'https://www.facebook.com/sharer/sharer.php?' +
 									'u=' + encodeURIComponent(url) +
 									'&quote=' + encodeURIComponent(text) +
-                  '&hashtag=' + (hashtags || '')
+                  '&hashtag=' + (hashtag || hashtags || '')
 								)
 								break;
 							}
