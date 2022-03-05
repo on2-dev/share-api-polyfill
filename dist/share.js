@@ -354,7 +354,7 @@ navigator.share = navigator.share || function () {
             switch (tool.dataset.tool) {
               case 'copy':
                 {
-                  navigator.clipboard.writeText(url);
+                  navigator.clipboard.writeText("".concat(title, "\n").concat(data.text || '', "\n").concat(url));
                   break;
                 }
 
@@ -369,14 +369,17 @@ navigator.share = navigator.share || function () {
 
               case 'email':
                 {
-                  window.open("mailto:" + '' + '?subject=' + title + '&body=' + url);
+                  // %0D%0A is newline
+                  var emailText = "".concat(text, "%0D%0A");
+                  var mailto = "mailto:?subject=".concat(title, "&body=").concat(emailText).concat(url);
+                  window.open(mailto);
                   break;
                 }
 
               case 'sms':
                 {
                   // window.open(toolsUrls.sms(title + ': \n' + url));
-                  location.href = "sms:".concat(language.selectSms, "?&body=").concat(title, ": ").concat(url); // window.open("sms:"+''+'?subject='+title+'&body='+url);
+                  location.href = "sms:".concat(language.selectSms, "?&body=").concat(title, ": ").concat(data.text || '', " ").concat(url); // window.open("sms:"+''+'?subject='+title+'&body='+url);
 
                   break;
                 }

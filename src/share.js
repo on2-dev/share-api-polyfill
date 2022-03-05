@@ -546,15 +546,13 @@ navigator.share = navigator.share || (function () {
 							}
 							case 'email': {
                 // %0D%0A is newline
-                const emailText = `${text}%0D%0A`
-                const mailto = `mailto:?subject=${title}&body=${emailText}${url}`
+                const emailText = `${encodeURIComponent(text)}%0D%0A`
+                const mailto = `mailto:?subject=${title}&body=${emailText}${encodeURIComponent(url)}`
 								window.open(mailto);
 								break;
 							}
 							case 'sms': {
-								// window.open(toolsUrls.sms(title + ': \n' + url));
-								location.href = `sms:${language.selectSms}?&body=${title}: ${data.text || ''} ${url}`;
-								// window.open("sms:"+''+'?subject='+title+'&body='+url);
+								location.href = `sms:${language.selectSms}?&body=${encodeURIComponent(title)}: ${encodeURIComponent(data.text || '')} ${url}`;
 								break;
 							}
 							case 'messenger': {
@@ -567,7 +565,6 @@ navigator.share = navigator.share || (function () {
 									'&redirect_uri=' + encodeURIComponent(url) +
 									'&quote=' + encodeURIComponent(text)
 								);
-
 								break;
 							}
 							case 'facebook': {
