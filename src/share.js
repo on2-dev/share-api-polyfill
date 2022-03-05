@@ -227,7 +227,9 @@ navigator.share = navigator.share || (function () {
 			}
 
 			const { title, url, fbId, hashtags, via } = data;
-			const configs = {
+			const { title, url, fbId, hashtags, via, hashtag } = data;
+
+      const configs = {
 				...{
 					copy: true,
 					print: true,
@@ -570,7 +572,8 @@ navigator.share = navigator.share || (function () {
 								window.open(
 									'https://www.facebook.com/sharer/sharer.php?' +
 									'u=' + encodeURIComponent(url) +
-									'&quote=' + encodeURIComponent(text)
+									'&quote=' + encodeURIComponent(text) +
+                  '&hashtag=' + (hashtag || hashtags || '')
 								)
 								break;
 							}

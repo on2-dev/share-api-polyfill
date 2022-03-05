@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = (env, argv) => {
   const config = {
+    devtool: 'source-map',
     entry: './src/share.js',
     output: {
       path: path.resolve(__dirname, 'dist'),

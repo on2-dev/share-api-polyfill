@@ -46,7 +46,7 @@ navigator.share({
 ```
 
 But in this case, you can also pass your `Facebook App Id` to enable sharing with **messenger**.
-Also, you can pass in a list of hashtags to be used when sharing with twitter.
+Also, you can pass in a list of hashtags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.
 
 ```js
 navigator.share({
