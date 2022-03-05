@@ -232,7 +232,9 @@ navigator.share = navigator.share || function () {
       var title = data.title,
           url = data.url,
           fbId = data.fbId,
-          hashtags = data.hashtags;
+          hashtags = data.hashtags,
+          via = data.via,
+          hashtag = data.hashtag;
 
       var configs = _objectSpread(_objectSpread({}, {
         copy: true,
@@ -347,7 +349,7 @@ navigator.share = navigator.share || function () {
       function bindEvents() {
         Array.from(container.querySelectorAll('.tool-icon')).forEach(function (tool) {
           tool.addEventListener('click', function (event) {
-            var payload = text + ': ' + url;
+            var payload = encodeURIComponent(text + ': ' + url);
 
             switch (tool.dataset.tool) {
               case 'copy':
@@ -387,7 +389,7 @@ navigator.share = navigator.share || function () {
 
               case 'facebook':
                 {
-                  window.open('https://www.facebook.com/sharer/sharer.php?' + 'u=' + encodeURIComponent(url) + '&quote=' + encodeURIComponent(text));
+                  window.open('https://www.facebook.com/sharer/sharer.php?' + 'u=' + encodeURIComponent(url) + '&quote=' + encodeURIComponent(text) + '&hashtag=' + (hashtag || hashtags || ''));
                   break;
                 }
 
@@ -399,25 +401,25 @@ navigator.share = navigator.share || function () {
 
               case 'twitter':
                 {
-                  window.open("https://twitter.com/intent/tweet?text=".concat(text, "&url=").concat(url, "&hashtags=").concat(hashtags || ''));
+                  window.open("https://twitter.com/intent/tweet?text=".concat(encodeURIComponent(text), "&url=").concat(encodeURIComponent(url), "&hashtags=").concat(hashtags || '', "&via=").concat(via ? encodeURIComponent(via) : ''));
                   break;
                 }
 
               case 'linkedin':
                 {
-                  window.open("https://www.linkedin.com/shareArticle?mini=true&url=".concat(url, "&title=").concat(title, "&summary=").concat(text, "&source=LinkedIn"));
+                  window.open("https://www.linkedin.com/shareArticle?mini=true&url=".concat(encodeURIComponent(url), "&title=").concat(title, "&summary=").concat(text, "&source=LinkedIn"));
                   break;
                 }
 
               case 'telegram':
                 {
-                  window.open(isDesktop ? 'https://telegram.me/share/msg?url=' + url + '&text=' + text : 'tg://msg?text=' + payload);
+                  window.open(isDesktop ? 'https://telegram.me/share/msg?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text) : 'tg://msg?text=' + payload);
                   break;
                 }
 
               case 'pinterest':
                 {
-                  window.open('https://pinterest.com/pin/create/button/?url=' + url + '&description=' + text + '&media=' + image);
+                  window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&description=' + encodeURIComponent(text) + '&media=' + image);
                   break;
                 }
             }
