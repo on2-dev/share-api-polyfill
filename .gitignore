@@ -537,5 +537,7 @@ healthchecksdb
 
 # Generic directories
 # dist/
+dist/share.js.map
+dist/share-min.js.map
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudio,visualstudiocode
