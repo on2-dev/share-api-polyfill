@@ -177,7 +177,15 @@ navigator.share = navigator.share || (function () {
 			print: 'Prenta',
 			email: 'Póstur',
 			selectSms: 'Veldu tengilið'
-		}
+		},
+    hu: {
+			shareTitle: 'Megosztás',
+			cancel: 'Bezárás',
+			copy: 'Másolás',
+			print: 'Nyomtatás',
+			email: 'E-mail',
+			selectSms: 'Válasszon egy kontaktot'
+		},
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
