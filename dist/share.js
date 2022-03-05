@@ -185,6 +185,14 @@ navigator.share = navigator.share || function () {
       print: 'Prenta',
       email: 'Póstur',
       selectSms: 'Veldu tengilið'
+    },
+    hu: {
+      shareTitle: 'Megosztás',
+      cancel: 'Bezárás',
+      copy: 'Másolás',
+      print: 'Nyomtatás',
+      email: 'E-mail',
+      selectSms: 'Válasszon egy kontaktot'
     }
   };
   var android = navigator.userAgent.match(/Android/i);
@@ -370,17 +378,15 @@ navigator.share = navigator.share || function () {
               case 'email':
                 {
                   // %0D%0A is newline
-                  var emailText = "".concat(text, "%0D%0A");
-                  var mailto = "mailto:?subject=".concat(title, "&body=").concat(emailText).concat(url);
+                  var emailText = "".concat(encodeURIComponent(text), "%0D%0A");
+                  var mailto = "mailto:?subject=".concat(title, "&body=").concat(emailText).concat(encodeURIComponent(url));
                   window.open(mailto);
                   break;
                 }
 
               case 'sms':
                 {
-                  // window.open(toolsUrls.sms(title + ': \n' + url));
-                  location.href = "sms:".concat(language.selectSms, "?&body=").concat(title, ": ").concat(data.text || '', " ").concat(url); // window.open("sms:"+''+'?subject='+title+'&body='+url);
-
+                  location.href = "sms:".concat(language.selectSms, "?&body=").concat(encodeURIComponent(title), ": ").concat(encodeURIComponent(data.text || ''), " ").concat(url);
                   break;
                 }
 
