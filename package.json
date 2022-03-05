@@ -8,6 +8,7 @@
     "live-server": "live-server demo/",
     "prepublish": "npm run build",
     "clean": "rm dist/bundle.js",
+    "security": "npx audit-ci --high --skip-dev",
     "build": "npm run build-dev && npm run build-prod",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production"
