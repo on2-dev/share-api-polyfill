@@ -40,7 +40,7 @@
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "glob-parent": "^6.0.2",
+    "glob-parent": "^5.1.2",
     "live-server": "^1.2.1",
     "merge2": "^1.4.1",
     "webpack": "^5.7.0",
