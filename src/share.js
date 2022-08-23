@@ -299,6 +299,7 @@ navigator.share = navigator.share || (function () {
   background-color: rgba(0, 0, 0, 0.6);
 }
 #shareAPIPolyfill-container {
+  color: #424242;
   background-color: #f9f9f9;
   top: auto;
   max-width: 400px;
