@@ -71,6 +71,7 @@ If the language is not found, it will use a fallback (default English).
 
 Currently supported languages:
 
+- bn
 - cs
 - de
 - it
