@@ -193,7 +193,15 @@ navigator.share = navigator.share || (function () {
 		print: 'प्रिंट करें',
 		email: 'ईमेल',
 		selectSms: 'संपर्क चुनें'
-	}
+	},
+    be: {
+      shareTitle: 'শেয়ার করুন',
+      cancel: 'বাতিল করুন',
+      copy: 'কপি করুন',
+      print: 'প্রিন্ট করুন',
+      email: 'ই মেইল',
+      selectSms: 'পরিচিতি নির্বাচন করুন'
+    }
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
