@@ -78,6 +78,7 @@ Currently supported languages:
 - en
 - es
 - fr
+- hi
 - hu
 - is
 - ja
