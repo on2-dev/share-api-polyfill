@@ -193,6 +193,14 @@ navigator.share = navigator.share || function () {
       print: 'Nyomtatás',
       email: 'E-mail',
       selectSms: 'Válasszon egy kontaktot'
+    },
+    be: {
+      shareTitle: 'শেয়ার করুন',
+      cancel: 'বাতিল করুন',
+      copy: 'কপি করুন',
+      print: 'প্রিন্ট করুন',
+      email: 'ই মেইল',
+      selectSms: 'পরিচিতি নির্বাচন করুন'
     }
   };
   var android = navigator.userAgent.match(/Android/i);
