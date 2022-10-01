@@ -201,7 +201,15 @@ navigator.share = navigator.share || (function () {
       print: 'প্রিন্ট করুন',
       email: 'ই মেইল',
       selectSms: 'পরিচিতি নির্বাচন করুন'
-    }
+    },
+    sw: {
+          shareTitle: 'Shiriki',
+          cancel: 'ghairi',
+          copy: 'nakala',
+          print: 'chapa',
+          email: 'barua pepe',
+          selectSms: 'Chagua anwani'
+        }
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
