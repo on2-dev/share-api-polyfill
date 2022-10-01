@@ -186,6 +186,14 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Válasszon egy kontaktot'
 		},
+	hi: {
+		shareTitle: 'शेयर करें',
+		cancel: 'रद्द करें',
+		copy: 'कॉपी करें',
+		print: 'प्रिंट करें',
+		email: 'ईमेल',
+		selectSms: 'संपर्क चुनें'
+	}
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
