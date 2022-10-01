@@ -4,7 +4,7 @@ This is a (6kb) polyfill for the `Web Share API` that can be used on desktop, to
 
 It also supports multi-language ([see the list of languages](#multi-language) - and you can help us with that :) ).
 
-This is a single file import polyfill.
+This is a single file import polyfill which relies on the `navigator.share()` method of the [Web Share API](https://www.w3.org/TR/web-share/).
 
 ![JavaScript Share API Polyfill in a Browser](https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
 [see the Share API Polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
