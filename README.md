@@ -126,6 +126,7 @@ navigator.share({
     telegram: true,
     skype: true,
     pinterest: true,
+    line: true,
     language: 'pt' // specify the default language
   }
 )
