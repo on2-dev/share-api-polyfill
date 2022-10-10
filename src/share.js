@@ -202,7 +202,15 @@ navigator.share = navigator.share || (function () {
       print: 'প্রিন্ট করুন',
       email: 'ই মেইল',
       selectSms: 'পরিচিতি নির্বাচন করুন'
-    }
+    },
+    ukr: {
+          shareTitle: 'Поділіться',
+          cancel: 'Скасувати',
+          copy: 'копія',
+          print: 'Роздрукувати',
+          email: 'Електронна пошта',
+          selectSms: 'Виберіть контакт'
+        }
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
