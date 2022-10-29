@@ -171,7 +171,7 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Wybierz kontakt'
 		},
-    	is: {
+		is: {
 			shareTitle: 'Deila',
 			cancel: 'Hætta við',
 			copy: 'Afrita',
@@ -179,7 +179,7 @@ navigator.share = navigator.share || (function () {
 			email: 'Póstur',
 			selectSms: 'Veldu tengilið'
 		},
-    	hu: {
+		hu: {
 			shareTitle: 'Megosztás',
 			cancel: 'Bezárás',
 			copy: 'Másolás',
@@ -195,7 +195,7 @@ navigator.share = navigator.share || (function () {
 			email: 'ईमेल',
 			selectSms: 'संपर्क चुनें'
 		},
-    	be: {
+		be: {
 			shareTitle: 'শেয়ার করুন',
 			cancel: 'বাতিল করুন',
 			copy: 'কপি করুন',
@@ -203,13 +203,13 @@ navigator.share = navigator.share || (function () {
 			email: 'ই মেইল',
 			selectSms: 'পরিচিতি নির্বাচন করুন'
 		},
-    	ind: {
-          shareTitle: 'Membagikan',
-          cancel: 'Membatalkan',
-          copy: 'Salinan',
-          print: 'Mencetak',
-          email: 'Surel',
-          selectSms: 'Pilih kontak'
+		ind: {
+			shareTitle: 'Membagikan',
+			cancel: 'Membatalkan',
+			copy: 'Salinan',
+			print: 'Mencetak',
+			email: 'Surel',
+			selectSms: 'Pilih kontak'
         },
 		et: {
 			shareTitle: 'Jaga',
