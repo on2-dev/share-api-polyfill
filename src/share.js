@@ -161,8 +161,8 @@ navigator.share = navigator.share || (function () {
 			copy: 'நகலெடு',
 			print: 'அச்சிடு',
 			email: 'மின்னஞ்சல்',
-      selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
-    },
+			selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
+		},
 		pl: {
 			shareTitle: 'Dzielić',
 			cancel: 'Anuluj',
@@ -171,7 +171,7 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Wybierz kontakt'
 		},
-    is: {
+    	is: {
 			shareTitle: 'Deila',
 			cancel: 'Hætta við',
 			copy: 'Afrita',
@@ -179,7 +179,7 @@ navigator.share = navigator.share || (function () {
 			email: 'Póstur',
 			selectSms: 'Veldu tengilið'
 		},
-    hu: {
+    	hu: {
 			shareTitle: 'Megosztás',
 			cancel: 'Bezárás',
 			copy: 'Másolás',
@@ -187,30 +187,38 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Válasszon egy kontaktot'
 		},
-	hi: {
-		shareTitle: 'शेयर करें',
-		cancel: 'रद्द करें',
-		copy: 'कॉपी करें',
-		print: 'प्रिंट करें',
-		email: 'ईमेल',
-		selectSms: 'संपर्क चुनें'
-	},
-    be: {
-      shareTitle: 'শেয়ার করুন',
-      cancel: 'বাতিল করুন',
-      copy: 'কপি করুন',
-      print: 'প্রিন্ট করুন',
-      email: 'ই মেইল',
-      selectSms: 'পরিচিতি নির্বাচন করুন'
-    },
-    ind: {
+		hi: {
+			shareTitle: 'शेयर करें',
+			cancel: 'रद्द करें',
+			copy: 'कॉपी करें',
+			print: 'प्रिंट करें',
+			email: 'ईमेल',
+			selectSms: 'संपर्क चुनें'
+		},
+    	be: {
+			shareTitle: 'শেয়ার করুন',
+			cancel: 'বাতিল করুন',
+			copy: 'কপি করুন',
+			print: 'প্রিন্ট করুন',
+			email: 'ই মেইল',
+			selectSms: 'পরিচিতি নির্বাচন করুন'
+		},
+    	ind: {
           shareTitle: 'Membagikan',
           cancel: 'Membatalkan',
           copy: 'Salinan',
           print: 'Mencetak',
           email: 'Surel',
           selectSms: 'Pilih kontak'
-        }
+        },
+		et: {
+			shareTitle: 'Jaga',
+			cancel: 'Tühista',
+			copy: 'Kopeeri',
+			print: 'Prindi',
+			email: 'E-post',
+			selectSms: 'Valige kontakt'
+		}
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
