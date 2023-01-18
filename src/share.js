@@ -16,7 +16,7 @@ navigator.share = navigator.share || (function () {
 			facebook: 'Facebook',
 			skype: 'Skype',
 			pinterest: 'Pinterest',
-      line: 'LINE',
+			line: 'LINE',
 		},
 		cs: {
 			shareTitle: 'Sdílet',
@@ -105,8 +105,8 @@ navigator.share = navigator.share || (function () {
 			print: 'Printen',
 			email: 'E-mail',
 			selectSms: 'Selecteer een contact'
-    },
-    sv: {
+		},
+		sv: {
 			shareTitle: 'Dela',
 			cancel: 'Avbryt',
 			copy: 'Kopiera',
@@ -161,8 +161,8 @@ navigator.share = navigator.share || (function () {
 			copy: 'நகலெடு',
 			print: 'அச்சிடு',
 			email: 'மின்னஞ்சல்',
-      selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
-    },
+			selectSms: 'ஒரு தொடர்பைத் தேர்வுசெய்க'
+		},
 		pl: {
 			shareTitle: 'Dzielić',
 			cancel: 'Anuluj',
@@ -171,7 +171,7 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Wybierz kontakt'
 		},
-    is: {
+		is: {
 			shareTitle: 'Deila',
 			cancel: 'Hætta við',
 			copy: 'Afrita',
@@ -179,7 +179,7 @@ navigator.share = navigator.share || (function () {
 			email: 'Póstur',
 			selectSms: 'Veldu tengilið'
 		},
-    hu: {
+		hu: {
 			shareTitle: 'Megosztás',
 			cancel: 'Bezárás',
 			copy: 'Másolás',
@@ -187,30 +187,30 @@ navigator.share = navigator.share || (function () {
 			email: 'E-mail',
 			selectSms: 'Válasszon egy kontaktot'
 		},
-	hi: {
-		shareTitle: 'शेयर करें',
-		cancel: 'रद्द करें',
-		copy: 'कॉपी करें',
-		print: 'प्रिंट करें',
-		email: 'ईमेल',
-		selectSms: 'संपर्क चुनें'
-	},
-    be: {
-      shareTitle: 'শেয়ার করুন',
-      cancel: 'বাতিল করুন',
-      copy: 'কপি করুন',
-      print: 'প্রিন্ট করুন',
-      email: 'ই মেইল',
-      selectSms: 'পরিচিতি নির্বাচন করুন'
-    },
-    ind: {
-          shareTitle: 'Membagikan',
-          cancel: 'Membatalkan',
-          copy: 'Salinan',
-          print: 'Mencetak',
-          email: 'Surel',
-          selectSms: 'Pilih kontak'
-        }
+		hi: {
+			shareTitle: 'शेयर करें',
+			cancel: 'रद्द करें',
+			copy: 'कॉपी करें',
+			print: 'प्रिंट करें',
+			email: 'ईमेल',
+			selectSms: 'संपर्क चुनें'
+		},
+		be: {
+			shareTitle: 'শেয়ার করুন',
+			cancel: 'বাতিল করুন',
+			copy: 'কপি করুন',
+			print: 'প্রিন্ট করুন',
+			email: 'ই মেইল',
+			selectSms: 'পরিচিতি নির্বাচন করুন'
+		},
+		ind: {
+			shareTitle: 'Membagikan',
+			cancel: 'Membatalkan',
+			copy: 'Salinan',
+			print: 'Mencetak',
+			email: 'Surel',
+			selectSms: 'Pilih kontak'
+		}
 	};
 
 	let android = navigator.userAgent.match(/Android/i);
@@ -234,9 +234,9 @@ navigator.share = navigator.share || (function () {
 		'twitter': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#1da1f2" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>',
 		'linkedin': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#0077b5" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>',
 		'telegram': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="#0088cc" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>',
-    'skype': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#00aff0" d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z"></path></svg>',
-    'pinterest': '<svg class="the-icon" width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><path d="M0,128.002 C0,180.416 31.518,225.444 76.619,245.241 C76.259,236.303 76.555,225.573 78.847,215.848 C81.308,205.457 95.317,146.1 95.317,146.1 C95.317,146.1 91.228,137.927 91.228,125.848 C91.228,106.879 102.222,92.712 115.914,92.712 C127.557,92.712 133.182,101.457 133.182,111.929 C133.182,123.633 125.717,141.14 121.878,157.355 C118.671,170.933 128.686,182.008 142.081,182.008 C166.333,182.008 182.667,150.859 182.667,113.953 C182.667,85.899 163.772,64.901 129.405,64.901 C90.577,64.901 66.388,93.857 66.388,126.201 C66.388,137.353 69.676,145.217 74.826,151.307 C77.194,154.104 77.523,155.229 76.666,158.441 C76.052,160.796 74.642,166.466 74.058,168.713 C73.206,171.955 70.579,173.114 67.649,171.917 C49.765,164.616 41.436,145.031 41.436,123.015 C41.436,86.654 72.102,43.054 132.918,43.054 C181.788,43.054 213.953,78.418 213.953,116.379 C213.953,166.592 186.037,204.105 144.887,204.105 C131.068,204.105 118.069,196.635 113.616,188.15 C113.616,188.15 106.185,217.642 104.611,223.337 C101.897,233.206 96.585,243.07 91.728,250.758 C103.24,254.156 115.401,256.007 128.005,256.007 C198.689,256.007 256.001,198.698 256.001,128.002 C256.001,57.309 198.689,0 128.005,0 C57.314,0 0,57.309 0,128.002 Z" fill="#CB1F27"></path></svg>',
-    'line': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320"><defs><style>.cls-1{fill:#06c755;}.cls-2{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="LINE_LOGO" data-name="LINE LOGO"><rect class="cls-1" width="320" height="320" rx="72.14"/><path class="cls-2" d="M266.66,144.92c0-47.74-47.86-86.58-106.69-86.58S53.28,97.18,53.28,144.92c0,42.8,38,78.65,89.22,85.42,3.48.75,8.21,2.29,9.4,5.26,1.08,2.7.71,6.93.35,9.65,0,0-1.25,7.53-1.52,9.13-.47,2.7-2.15,10.55,9.24,5.76s61.44-36.18,83.82-61.95h0C259.25,181.24,266.66,164,266.66,144.92Z"/><path class="cls-1" d="M231.16,172.49h-30a2,2,0,0,1-2-2v0h0V123.94h0v0a2,2,0,0,1,2-2h30a2,2,0,0,1,2,2v7.57a2,2,0,0,1-2,2H210.79v7.85h20.37a2,2,0,0,1,2,2V151a2,2,0,0,1-2,2H210.79v7.86h20.37a2,2,0,0,1,2,2v7.56A2,2,0,0,1,231.16,172.49Z"/><path class="cls-1" d="M120.29,172.49a2,2,0,0,0,2-2v-7.56a2,2,0,0,0-2-2H99.92v-37a2,2,0,0,0-2-2H90.32a2,2,0,0,0-2,2v46.53h0v0a2,2,0,0,0,2,2h30Z"/><rect class="cls-1" x="128.73" y="121.85" width="11.64" height="50.64" rx="2.04"/><path class="cls-1" d="M189.84,121.85h-7.56a2,2,0,0,0-2,2v27.66l-21.3-28.77a1.2,1.2,0,0,0-.17-.21v0l-.12-.12,0,0-.11-.09-.06,0-.11-.08-.06,0-.11-.06-.07,0-.11,0-.07,0-.12,0-.08,0-.12,0h-.08l-.11,0h-7.71a2,2,0,0,0-2,2v46.56a2,2,0,0,0,2,2h7.57a2,2,0,0,0,2-2V142.81l21.33,28.8a2,2,0,0,0,.52.52h0l.12.08.06,0,.1.05.1,0,.07,0,.14,0h0a2.42,2.42,0,0,0,.54.07h7.52a2,2,0,0,0,2-2V123.89A2,2,0,0,0,189.84,121.85Z"/></g></g></svg>'
+		'skype': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#00aff0" d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z"></path></svg>',
+		'pinterest': '<svg class="the-icon" width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><path d="M0,128.002 C0,180.416 31.518,225.444 76.619,245.241 C76.259,236.303 76.555,225.573 78.847,215.848 C81.308,205.457 95.317,146.1 95.317,146.1 C95.317,146.1 91.228,137.927 91.228,125.848 C91.228,106.879 102.222,92.712 115.914,92.712 C127.557,92.712 133.182,101.457 133.182,111.929 C133.182,123.633 125.717,141.14 121.878,157.355 C118.671,170.933 128.686,182.008 142.081,182.008 C166.333,182.008 182.667,150.859 182.667,113.953 C182.667,85.899 163.772,64.901 129.405,64.901 C90.577,64.901 66.388,93.857 66.388,126.201 C66.388,137.353 69.676,145.217 74.826,151.307 C77.194,154.104 77.523,155.229 76.666,158.441 C76.052,160.796 74.642,166.466 74.058,168.713 C73.206,171.955 70.579,173.114 67.649,171.917 C49.765,164.616 41.436,145.031 41.436,123.015 C41.436,86.654 72.102,43.054 132.918,43.054 C181.788,43.054 213.953,78.418 213.953,116.379 C213.953,166.592 186.037,204.105 144.887,204.105 C131.068,204.105 118.069,196.635 113.616,188.15 C113.616,188.15 106.185,217.642 104.611,223.337 C101.897,233.206 96.585,243.07 91.728,250.758 C103.24,254.156 115.401,256.007 128.005,256.007 C198.689,256.007 256.001,198.698 256.001,128.002 C256.001,57.309 198.689,0 128.005,0 C57.314,0 0,57.309 0,128.002 Z" fill="#CB1F27"></path></svg>',
+		'line': '<svg class="the-icon" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320"><defs><style>.cls-1{fill:#06c755;}.cls-2{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="LINE_LOGO" data-name="LINE LOGO"><rect class="cls-1" width="320" height="320" rx="72.14"/><path class="cls-2" d="M266.66,144.92c0-47.74-47.86-86.58-106.69-86.58S53.28,97.18,53.28,144.92c0,42.8,38,78.65,89.22,85.42,3.48.75,8.21,2.29,9.4,5.26,1.08,2.7.71,6.93.35,9.65,0,0-1.25,7.53-1.52,9.13-.47,2.7-2.15,10.55,9.24,5.76s61.44-36.18,83.82-61.95h0C259.25,181.24,266.66,164,266.66,144.92Z"/><path class="cls-1" d="M231.16,172.49h-30a2,2,0,0,1-2-2v0h0V123.94h0v0a2,2,0,0,1,2-2h30a2,2,0,0,1,2,2v7.57a2,2,0,0,1-2,2H210.79v7.85h20.37a2,2,0,0,1,2,2V151a2,2,0,0,1-2,2H210.79v7.86h20.37a2,2,0,0,1,2,2v7.56A2,2,0,0,1,231.16,172.49Z"/><path class="cls-1" d="M120.29,172.49a2,2,0,0,0,2-2v-7.56a2,2,0,0,0-2-2H99.92v-37a2,2,0,0,0-2-2H90.32a2,2,0,0,0-2,2v46.53h0v0a2,2,0,0,0,2,2h30Z"/><rect class="cls-1" x="128.73" y="121.85" width="11.64" height="50.64" rx="2.04"/><path class="cls-1" d="M189.84,121.85h-7.56a2,2,0,0,0-2,2v27.66l-21.3-28.77a1.2,1.2,0,0,0-.17-.21v0l-.12-.12,0,0-.11-.09-.06,0-.11-.08-.06,0-.11-.06-.07,0-.11,0-.07,0-.12,0-.08,0-.12,0h-.08l-.11,0h-7.71a2,2,0,0,0-2,2v46.56a2,2,0,0,0,2,2h7.57a2,2,0,0,0,2-2V142.81l21.33,28.8a2,2,0,0,0,.52.52h0l.12.08.06,0,.1.05.1,0,.07,0,.14,0h0a2.42,2.42,0,0,0,.54.07h7.52a2,2,0,0,0,2-2V123.89A2,2,0,0,0,189.84,121.85Z"/></g></g></svg>'
 	}
 
 	function appendCSS(content) {
@@ -262,7 +262,7 @@ navigator.share = navigator.share || (function () {
 
 			const { title, url, fbId, hashtags, via, hashtag } = data;
 
-      const configs = {
+			const configs = {
 				...{
 					copy: true,
 					print: true,
@@ -276,7 +276,7 @@ navigator.share = navigator.share || (function () {
 					telegram: true,
 					skype: true,
 					pinterest: true,
-          line: true,
+					line: true,
 					language: 'en'
 				}, ...configurations
 			};
@@ -585,9 +585,9 @@ navigator.share = navigator.share || (function () {
 								break;
 							}
 							case 'email': {
-                // %0D%0A is newline
-                const emailText = `${encodeURIComponent(text)}%0D%0A`
-                const mailto = `mailto:?subject=${title}&body=${emailText}${encodeURIComponent(url)}`
+								// %0D%0A is newline
+								const emailText = `${encodeURIComponent(text)}%0D%0A`;
+								const mailto = `mailto:?subject=${title}&body=${emailText}${encodeURIComponent(url)}`;
 								window.open(mailto);
 								break;
 							}
@@ -612,7 +612,7 @@ navigator.share = navigator.share || (function () {
 									'https://www.facebook.com/sharer/sharer.php?' +
 									'u=' + encodeURIComponent(url) +
 									'&quote=' + encodeURIComponent(text) +
-                  '&hashtag=' + (hashtag || hashtags || '')
+									'&hashtag=' + (hashtag || hashtags || '')
 								)
 								break;
 							}
@@ -622,8 +622,8 @@ navigator.share = navigator.share || (function () {
 							}
 							case 'twitter': {
 								window.open(
-                  `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags || ''}&via=${via ? encodeURIComponent(via): ''}`
-                );
+									`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags || ''}&via=${via ? encodeURIComponent(via): ''}`
+								);
 								break;
 							}
 							case 'linkedin': {
@@ -638,10 +638,10 @@ navigator.share = navigator.share || (function () {
 								window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&description=' + encodeURIComponent(text) + '&media=' + image);
 								break;
 							}
-              case 'line': {
-                window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url)  + '&text=' + encodeURIComponent(text));
-                break;
-              }
+							case 'line': {
+								window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url)  + '&text=' + encodeURIComponent(text));
+								break;
+							}
 						}
 						resolve();
 						closeShareUI();
