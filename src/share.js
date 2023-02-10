@@ -652,7 +652,7 @@ navigator.share = navigator.share || (function () {
 							case 'mastodon': {
 								let domain = prompt("Enter your Mastodon domain", "mastodon.social");
 								if (domain != "" && domain != null) {
-									let share_url = "https://" + domain + "/share?text=" + encodeURIComponent(payload);
+									let share_url = "https://" + domain + "/share?text=" + payload;
 									window.open(share_url);
 								}
 								break;
